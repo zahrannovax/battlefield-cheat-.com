@@ -1,0 +1,42 @@
+/** Descriptive image alts — Google rejects empty or keyword-only alts. */
+export const DESCRIPTIVE_IMAGE_ALTS = {
+	hero: 'Battlefield 6 Cheats hero — ESP and aimbot overlay in Battlefield 6',
+	espWallhack: 'Wallhack outlines showing enemys and vehicles through walls',
+	aimbotCombat: 'Soft aim assist overlay during an Battlefield 6 match',
+	squadFight: 'Battlefield 6 Cheats combat overlay during a squad fight',
+	playerEsp: 'Player ESP boxes and distance readouts in a Battlefield 6 match',
+	headerArt: 'Aimbot view and bone priority controls for Battlefield 6',
+	cheatsPackage: '2D radar threat overlay for Battlefield 6',
+	rebootFight: 'Aimbot assist during a Battlefield 6 firefight',
+	battleRoyale: 'Battlefield 6 Cheats in-match overview for Windows PC',
+	battleRoyaleIsland: 'ESP markers for loot and objectives in Battlefield 6',
+};
+
+/** Page-level image alt by pageId (EN source of truth). */
+export const PAGE_IMAGE_ALTS = {
+	home: 'Battlefield 6 Cheats homepage hero — ESP and aimbot for Battlefield 6',
+	'bf6-esp': 'Battlefield 6 ESP player boxes and distance readouts in a match',
+	'bf6-aimbot': 'Battlefield 6 aimbot and soft aim controls on Windows PC',
+	features: 'Battlefield 6 Cheats features — ESP, soft aim, and radar screenshots',
+	pricing: 'Battlefield 6 Cheats store plans for monthly and lifetime licenses',
+	setup: 'Battlefield 6 Cheats setup guide screenshot for Windows PC',
+	updates: 'Battlefield 6 Cheats live status after EA Javelin and game patches',
+	faq: 'Battlefield 6 Cheats FAQ — delivery, setup, and update answers',
+	support: 'Battlefield 6 Cheats support page for license and setup help',
+	undetected: 'Battlefield 6 Cheats undetected status overview for Windows PC',
+	wallhack: 'Battlefield 6 wallhack visibility through walls in a match',
+	radar: 'Battlefield 6 2D radar overlay showing nearby threats',
+	javelin: 'Battlefield 6 Cheats maintenance after a EA Javelin patch',
+	'cheats-2026': 'Battlefield 6 Cheats product overview for Battlefield 6',
+	hacks: 'Battlefield 6 Cheats product page — ESP, aimbot, and radar',
+	'cheat-download': 'Battlefield 6 Cheats download and install delivery flow',
+	'mod-menu': 'Battlefield 6 Cheats in-game menu controls',
+	'soft-aim': 'Battlefield 6 soft aim FOV and smoothness settings',
+	'best-cheats': 'Battlefield 6 Cheats overview for Battlefield 6 on PC',
+	'aimbot-hack': 'Battlefield 6 aimbot hack controls and bone priority',
+	'esp-hack': 'Battlefield 6 ESP hack boxes and loot markers',
+	'unlock-all': 'Battlefield 6 Cheats license features overview',
+	privacy: 'Battlefield 6 Cheats privacy policy page',
+	refund: 'Battlefield 6 Cheats refund policy page',
+	terms: 'Battlefield 6 Cheats terms of use page',
+};
