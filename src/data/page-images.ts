@@ -28,7 +28,7 @@ export const pageImageSrcById: Record<PageId, string> = {
 	radar: '/images/blog-image-6.jpg',
 	javelin: '/images/blog-image-7.webp',
 	'cheats-2026': '/images/blog-image-8.webp',
-	hacks: '/images/blog-image-9.webp',
+	hacks: '/images/hack-preview-image-3.webp',
 	'cheat-download': '/images/hack-preview-image-1.webp',
 	'mod-menu': '/images/hack-preview-image-2.webp',
 	'soft-aim': '/images/hack-preview-image-3.webp',
