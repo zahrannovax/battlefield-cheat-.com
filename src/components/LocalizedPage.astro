@@ -230,7 +230,19 @@ const eyebrowByPage: Partial<Record<PageId, string>> = {
 		gap: 0.45rem;
 	}
 
+	.faq-index__list li {
+		display: flex;
+		align-items: center;
+		padding-left: 1.05rem;
+	}
+
+	.faq-index__list li::before {
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
 	.faq-index__list a {
+		flex: 1;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;

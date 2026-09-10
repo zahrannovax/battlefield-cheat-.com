@@ -413,6 +413,6 @@ export const customerReviews = [
 ] as const satisfies readonly CustomerReview[];
 
 export const customerReviewStats = {
-	averageRating: 4.5,
-	totalCount: customerReviews.length,
+	averageRating: 4.9,
+	totalCount: 292,
 } as const;

@@ -93,12 +93,12 @@ export const blogUi: Record<
 	}
 > = {
 	en: {
-		blogTitle: 'Battlefield 6 Cheats Blog | Raid Guides',
+		blogTitle: 'Battlefield 6 Cheats Blog | ESP & DMA',
 		blogDescription:
-			'Battlefield 6 guides — raid tips, ESP, aimbot notes, loot routes, and BattlEye update coverage. English blog at battlefieldcheat.com/blog/.',
+			'Battlefield 6 guides — ESP, aimbot, DMA, and EA Javelin update coverage. English blog at battlefieldcheat.com/blog/.',
 		blogH1: 'Battlefield 6 Cheats Intel',
 		blogIntro:
-			'Short Battlefield 6 guides for PMC raids and Scav runs. Pair these tips with the Battlefield 6 Cheats product pages when you need ESP, soft aim, or radar.',
+			'Short Battlefield 6 guides for ESP, aimbot, and DMA. Pair these tips with the Battlefield 6 Cheats product pages when you need tools in a match.',
 		readMore: 'Read guide',
 		published: 'Published',
 		updated: 'Updated',
@@ -113,7 +113,7 @@ export const blogUi: Record<
 			'Blog de Battlefield 6 Cheats con guías de trucos indetectables, ESP wallhack, radar y Aimbot para Battlefield 6 en PC Windows.',
 		blogH1: 'Blog Battlefield 6 Cheats — Guías globales',
 		blogIntro:
-			'Guías SEO de trucos Battlefield 6 indetectables, ESP wallhack, radar hack, Aimbot y mantenimiento BattlEye anti-cheat en 22 idiomas.',
+			'Guías SEO de trucos Battlefield 6 indetectables, ESP wallhack, DMA, Aimbot y mantenimiento EA Javelin anti-cheat en 22 idiomas.',
 		readMore: 'Leer guía',
 		published: 'Publicado',
 		updated: 'Actualizado',
@@ -128,7 +128,7 @@ export const blogUi: Record<
 			'Blog Battlefield 6 Cheats : triches indétectables, ESP wallhack, radar et Aimbot pour Battlefield 6 sur PC Windows.',
 		blogH1: 'Blog Battlefield 6 Cheats — Guides mondiaux',
 		blogIntro:
-			'Guides SEO triches Battlefield 6 indétectables, ESP wallhack, radar hack, Aimbot et BattlEye anti-cheat en 22 langues.',
+			'Guides SEO triches Battlefield 6 indétectables, ESP wallhack, DMA, Aimbot et EA Javelin anti-cheat en 22 langues.',
 		readMore: 'Lire le guide',
 		published: 'Publié',
 		updated: 'Mis à jour',
@@ -143,7 +143,7 @@ export const blogUi: Record<
 			'Battlefield 6 Cheats Blog mit undetected ESP, Wallhack, Radar und Aimbot Guides für Battlefield 6 auf Windows PC.',
 		blogH1: 'Battlefield 6 Cheats Blog — Globale Guides',
 		blogIntro:
-			'SEO-Guides für undetected Battlefield 6 Cheats, ESP Wallhack, Radar Hack, Aimbot und BattlEye anti-cheat in 22 Sprachen.',
+			'SEO-Guides für undetected Battlefield 6 Cheats, ESP Wallhack, Radar Hack, Aimbot und EA Javelin anti-cheat in 22 Sprachen.',
 		readMore: 'Guide lesen',
 		published: 'Veröffentlicht',
 		updated: 'Aktualisiert',
@@ -158,7 +158,7 @@ export const blogUi: Record<
 			'Blog Battlefield 6 Cheats com guias de cheats indetectáveis, ESP wallhack, radar e Aimbot para Battlefield 6 no PC.',
 		blogH1: 'Blog Battlefield 6 Cheats — Guias globais',
 		blogIntro:
-			'Guias SEO de cheats Battlefield 6 indetectáveis, ESP wallhack, radar hack, Aimbot e BattlEye anti-cheat em 22 idiomas.',
+			'Guias SEO de cheats Battlefield 6 indetectáveis, ESP wallhack, DMA, Aimbot e EA Javelin anti-cheat em 22 idiomas.',
 		readMore: 'Ler guia',
 		published: 'Publicado',
 		updated: 'Atualizado',
@@ -173,7 +173,7 @@ export const blogUi: Record<
 			'Blog Battlefield 6 Cheats con guide cheat indetectable, ESP wallhack, radar e Aimbot per Battlefield 6 su PC Windows.',
 		blogH1: 'Blog Battlefield 6 Cheats — Guide globali',
 		blogIntro:
-			'Guide SEO cheat Battlefield 6 indetectable, ESP wallhack, radar hack, Aimbot e BattlEye anti-cheat in 22 lingue.',
+			'Guide SEO cheat Battlefield 6 indetectable, ESP wallhack, DMA, Aimbot e EA Javelin anti-cheat in 22 lingue.',
 		readMore: 'Leggi guida',
 		published: 'Pubblicato',
 		updated: 'Aggiornato',
@@ -188,7 +188,7 @@ export const blogUi: Record<
 			'Battlefield 6 Cheats blog met undetected ESP, wallhack, radar en Aimbot gidsen voor Battlefield 6 op Windows PC.',
 		blogH1: 'Battlefield 6 Cheats Blog — Wereldwijde gidsen',
 		blogIntro:
-			'SEO-gidsen voor undetected battlefield 6 cheats, ESP wallhack, radar hack, Aimbot en BattlEye anti-cheat in 22 talen.',
+			'SEO-gidsen voor undetected battlefield 6 cheats, ESP wallhack, DMA, Aimbot en EA Javelin anti-cheat in 22 talen.',
 		readMore: 'Lees gids',
 		published: 'Gepubliceerd',
 		updated: 'Bijgewerkt',
@@ -203,7 +203,7 @@ export const blogUi: Record<
 			'Blog Battlefield 6 Cheats z poradnikami undetected ESP, wallhack, radar i Aimbot dla Battlefield 6 na PC.',
 		blogH1: 'Blog Battlefield 6 Cheats — Globalne poradniki',
 		blogIntro:
-			'Poradniki SEO undetected cheatów Battlefield 6, ESP wallhack, radar hack, Aimbot i BattlEye anti-cheat w 22 językach.',
+			'Poradniki SEO undetected cheatów Battlefield 6, ESP wallhack, DMA, Aimbot i EA Javelin anti-cheat w 22 językach.',
 		readMore: 'Czytaj poradnik',
 		published: 'Opublikowano',
 		updated: 'Zaktualizowano',
@@ -218,7 +218,7 @@ export const blogUi: Record<
 			'Блог Battlefield 6 Cheats: undetected ESP, wallhack, radar и Aimbot для Battlefield 6 на Windows PC.',
 		blogH1: 'Блог Battlefield 6 Cheats — Глобальные гайды',
 		blogIntro:
-			'SEO-гайды по undetected читам Battlefield 6, ESP wallhack, radar hack, Aimbot и BattlEye anti-cheat на 22 языках.',
+			'SEO-гайды по undetected читам Battlefield 6, ESP wallhack, DMA, Aimbot и EA Javelin anti-cheat на 22 языках.',
 		readMore: 'Читать гайд',
 		published: 'Опубликовано',
 		updated: 'Обновлено',
@@ -233,7 +233,7 @@ export const blogUi: Record<
 			'Battlefield 6 Cheats blog: undetected ESP, wallhack, radar ve Aimbot rehberleri Battlefield 6 Windows PC.',
 		blogH1: 'Battlefield 6 Cheats Blog — Küresel rehberler',
 		blogIntro:
-			'Undetected Battlefield 6 hileleri, ESP wallhack, radar hack, Aimbot ve BattlEye anti-cheat SEO rehberleri 22 dilde.',
+			'Undetected Battlefield 6 hileleri, ESP wallhack, DMA, Aimbot ve EA Javelin anti-cheat SEO rehberleri 22 dilde.',
 		readMore: 'Rehberi oku',
 		published: 'Yayınlandı',
 		updated: 'Güncellendi',
@@ -248,7 +248,7 @@ export const blogUi: Record<
 			'مدونة Battlefield 6 Cheats: غش undetected وESP wallhack ورadar وAimbot لـ Battlefield 6 على Windows PC.',
 		blogH1: 'مدونة Battlefield 6 Cheats — أدلة عالمية',
 		blogIntro:
-			'أدلة SEO لغش Battlefield 6 undetected وESP wallhack ورadar hack وAimbot وBattlEye anti-cheat بـ 22 لغة.',
+			'أدلة SEO لغش Battlefield 6 undetected وESP wallhack ورadar hack وAimbot وEA Javelin anti-cheat بـ 22 لغة.',
 		readMore: 'اقرأ الدليل',
 		published: 'نُشر',
 		updated: 'تم التحديث',
@@ -263,7 +263,7 @@ export const blogUi: Record<
 			'Battlefield 6 Cheatsブログ：undetected ESP、wallhack、radar、Aimbotガイド。Battlefield 6 Windows PC向け。',
 		blogH1: 'Battlefield 6 Cheats ブログ — グローバルガイド',
 		blogIntro:
-			'undetected Battlefield 6チート、ESP wallhack、radar hack、Aimbot、BattlEye anti-cheatのSEOガイドを22言語で提供。',
+			'undetected Battlefield 6チート、ESP wallhack、DMA、Aimbot、EA Javelin anti-cheatのSEOガイドを22言語で提供。',
 		readMore: 'ガイドを読む',
 		published: '公開日',
 		updated: '更新日',
@@ -278,7 +278,7 @@ export const blogUi: Record<
 			'Battlefield 6 Cheats 블로그: undetected ESP, wallhack, radar, Aimbot 가이드. Battlefield 6 Windows PC.',
 		blogH1: 'Battlefield 6 Cheats 블로그 — 글로벌 가이드',
 		blogIntro:
-			'undetected Battlefield 6 치트, ESP wallhack, radar hack, Aimbot, BattlEye anti-cheat SEO 가이드를 22개 언어로 제공.',
+			'undetected Battlefield 6 치트, ESP wallhack, DMA, Aimbot, EA Javelin anti-cheat SEO 가이드를 22개 언어로 제공.',
 		readMore: '가이드 읽기',
 		published: '게시일',
 		updated: '업데이트',
@@ -293,7 +293,7 @@ export const blogUi: Record<
 			'Battlefield 6 Cheats博客：undetected ESP、wallhack、radar和Aimbot指南，适用于Battlefield 6 Windows PC。',
 		blogH1: 'Battlefield 6 Cheats 博客 — 全球指南',
 		blogIntro:
-			'undetected Battlefield 6作弊、ESP wallhack、radar hack、Aimbot和BattlEye anti-cheat的SEO指南，共22种语言。',
+			'undetected Battlefield 6作弊、ESP wallhack、DMA、Aimbot和EA Javelin anti-cheat的SEO指南，共22种语言。',
 		readMore: '阅读指南',
 		published: '发布',
 		updated: '更新',
@@ -308,7 +308,7 @@ export const blogUi: Record<
 			'Battlefield 6 Cheats ब्लॉग: undetected ESP, wallhack, radar और Aimbot गाइड Battlefield 6 Windows PC के लिए।',
 		blogH1: 'Battlefield 6 Cheats ब्लॉग — वैश्विक गाइड',
 		blogIntro:
-			'undetected battlefield 6 cheats, ESP wallhack, radar hack, Aimbot और BattlEye anti-cheat SEO गाइड 22 भाषाओं में।',
+			'undetected battlefield 6 cheats, ESP wallhack, DMA, Aimbot और EA Javelin anti-cheat SEO गाइड 22 भाषाओं में।',
 		readMore: 'गाइड पढ़ें',
 		published: 'प्रकाशित',
 		updated: 'अपडेट',
@@ -323,7 +323,7 @@ export const blogUi: Record<
 			'Blog Battlefield 6 Cheats: panduan undetected ESP, wallhack, radar dan Aimbot untuk Battlefield 6 di PC Windows.',
 		blogH1: 'Blog Battlefield 6 Cheats — Panduan global',
 		blogIntro:
-			'Panduan SEO cheat Battlefield 6 undetected, ESP wallhack, radar hack, Aimbot dan BattlEye anti-cheat dalam 22 bahasa.',
+			'Panduan SEO cheat Battlefield 6 undetected, ESP wallhack, DMA, Aimbot dan EA Javelin anti-cheat dalam 22 bahasa.',
 		readMore: 'Baca panduan',
 		published: 'Dipublikasikan',
 		updated: 'Diperbarui',
@@ -338,7 +338,7 @@ export const blogUi: Record<
 			'บล็อก Battlefield 6 Cheats: คู่มือ undetected ESP, wallhack, radar และ Aimbot สำหรับ Battlefield 6 บน PC',
 		blogH1: 'บล็อก Battlefield 6 Cheats — คู่มือทั่วโลก',
 		blogIntro:
-			'คู่มือ SEO สำหรับ cheat Battlefield 6 undetected, ESP wallhack, radar hack, Aimbot และ BattlEye anti-cheat 22 ภาษา',
+			'คู่มือ SEO สำหรับ cheat Battlefield 6 undetected, ESP wallhack, DMA, Aimbot และ EA Javelin anti-cheat 22 ภาษา',
 		readMore: 'อ่านคู่มือ',
 		published: 'เผยแพร่',
 		updated: 'อัปเดต',
@@ -353,7 +353,7 @@ export const blogUi: Record<
 			'Blog Battlefield 6 Cheats: hướng dẫn undetected ESP, wallhack, radar và Aimbot cho Battlefield 6 trên PC.',
 		blogH1: 'Blog Battlefield 6 Cheats — Hướng dẫn toàn cầu',
 		blogIntro:
-			'Hướng dẫn SEO cheat Battlefield 6 undetected, ESP wallhack, radar hack, Aimbot và BattlEye anti-cheat bằng 22 ngôn ngữ.',
+			'Hướng dẫn SEO cheat Battlefield 6 undetected, ESP wallhack, DMA, Aimbot và EA Javelin anti-cheat bằng 22 ngôn ngữ.',
 		readMore: 'Đọc hướng dẫn',
 		published: 'Xuất bản',
 		updated: 'Cập nhật',
@@ -368,7 +368,7 @@ export const blogUi: Record<
 			'Блог Battlefield 6 Cheats: undetected ESP, wallhack, radar та Aimbot для Battlefield 6 на Windows PC.',
 		blogH1: 'Блог Battlefield 6 Cheats — Глобальні гайди',
 		blogIntro:
-			'SEO-гайди з undetected читів Battlefield 6, ESP wallhack, radar hack, Aimbot та BattlEye anti-cheat 22 мовами.',
+			'SEO-гайди з undetected читів Battlefield 6, ESP wallhack, DMA, Aimbot та EA Javelin anti-cheat 22 мовами.',
 		readMore: 'Читати гайд',
 		published: 'Опубліковано',
 		updated: 'Оновлено',
@@ -383,7 +383,7 @@ export const blogUi: Record<
 			'Blog Battlefield 6 Cheats: undetected ESP, wallhack, radar a Aimbot pro Battlefield 6 na Windows PC.',
 		blogH1: 'Blog Battlefield 6 Cheats — Globální průvodce',
 		blogIntro:
-			'SEO průvodce undetected Battlefield 6 cheaty, ESP wallhack, radar hack, Aimbot a BattlEye anti-cheat ve 22 jazycích.',
+			'SEO průvodce undetected Battlefield 6 cheaty, ESP wallhack, DMA, Aimbot a EA Javelin anti-cheat ve 22 jazycích.',
 		readMore: 'Číst průvodce',
 		published: 'Publikováno',
 		updated: 'Aktualizováno',
@@ -398,7 +398,7 @@ export const blogUi: Record<
 			'Blog Battlefield 6 Cheats: ghiduri undetected ESP, wallhack, radar și Aimbot pentru Battlefield 6 pe PC.',
 		blogH1: 'Blog Battlefield 6 Cheats — Ghiduri globale',
 		blogIntro:
-			'Ghiduri SEO cheat-uri Battlefield 6 undetected, ESP wallhack, radar hack, Aimbot și BattlEye anti-cheat în 22 de limbi.',
+			'Ghiduri SEO cheat-uri Battlefield 6 undetected, ESP wallhack, DMA, Aimbot și EA Javelin anti-cheat în 22 de limbi.',
 		readMore: 'Citește ghidul',
 		published: 'Publicat',
 		updated: 'Actualizat',
@@ -413,7 +413,7 @@ export const blogUi: Record<
 			'Battlefield 6 Cheats blogg med undetected ESP, wallhack, radar och Aimbot guider för Battlefield 6 på PC.',
 		blogH1: 'Battlefield 6 Cheats Blogg — Globala guider',
 		blogIntro:
-			'SEO-guider för undetected battlefield 6 cheats, ESP wallhack, radar hack, Aimbot och BattlEye anti-cheat på 22 språk.',
+			'SEO-guider för undetected battlefield 6 cheats, ESP wallhack, DMA, Aimbot och EA Javelin anti-cheat på 22 språk.',
 		readMore: 'Läs guide',
 		published: 'Publicerad',
 		updated: 'Uppdaterad',

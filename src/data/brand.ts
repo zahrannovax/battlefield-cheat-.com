@@ -27,8 +27,8 @@ export const brand = {
 	logoRasterWidth: 512,
 	logoRasterHeight: 512,
 	logoAlt: 'battlefield 6 cheats logo',
-	defaultOgImage: '/images/hero-banner-new-1.png',
-	heroImage: '/images/hero-banner-new-1.png',
+	defaultOgImage: '/images/hero-banner-new-2.png',
+	heroImage: '/images/hero-banner-new-2.png',
 
 	plans: [
 		{ id: 'monthly', label: 'Monthly', price: 35, duration: 'P30D' },
@@ -43,11 +43,11 @@ export const brand = {
 	 */
 	theme: {
 		accent: '#f97316',
-		bg: '#0a0805',
+		bg: '#000000',
 		soft: '#fb923c',
 		deep: '#c2410c',
 		hover: '#ea6d0e',
-		panel: '#0c0905',
+		panel: '#090909',
 	},
 
 	/**
@@ -151,12 +151,12 @@ export const brand = {
 		reviewsImageCaption: 'What buyers say about {primaryKeyword}',
 		images: [
 			{
-				src: '/images/hero-banner-new-1.png',
+				src: '/images/hero-banner-new-2.png',
 				title: 'battlefield 6 cheats hero',
 				caption: 'battlefield 6 cheats ESP and aimbot on Windows PC',
 			},
 			{
-				src: '/images/hero-banner-new-1.png',
+				src: '/images/hero-banner-new-2.png',
 				title: 'battlefield 6 cheats preview',
 				caption: 'battlefield 6 cheats — AWS, Cloud-DMA, ESP, aimbot',
 			},

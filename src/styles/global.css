@@ -6,8 +6,8 @@
 	--font-display: "Syne Variable", "Syne", ui-sans-serif, sans-serif;
 
 	/* Near-black canvas — Linear / open-source product surface ladder */
-	--bg: #08090a;
-	--bg-panel: #0f1011;
+	--bg: #000000;
+	--bg-panel: #090909;
 	--bg-elevated: #161618;
 	--bg-hover: #1c1c1f;
 	--line: #23252a;
@@ -95,7 +95,7 @@
 	--radius-card: var(--radius-md);
 	--radius-pill: 999px;
 	--touch-min: 2.75rem;
-	--header-h: 4rem;
+	--header-h: 5.25rem;
 	--safe-left: env(safe-area-inset-left, 0px);
 	--safe-right: env(safe-area-inset-right, 0px);
 	--safe-top: env(safe-area-inset-top, 0px);
@@ -244,7 +244,7 @@
 		:root {
 			--section-space: 2.75rem;
 			--section-space-sm: 1.5rem;
-			--header-h: 3.65rem;
+			--header-h: 4.75rem;
 			--page-gutter: max(1rem, 4vw);
 		}
 
@@ -276,7 +276,7 @@
 
 	@media (max-height: 480px) and (orientation: landscape) {
 		:root {
-			--header-h: 3.25rem;
+			--header-h: 4.25rem;
 			--section-space: 1.75rem;
 		}
 	}

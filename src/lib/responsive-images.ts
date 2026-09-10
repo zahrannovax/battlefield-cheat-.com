@@ -17,29 +17,29 @@ export function contentSrcSet(baseSrc: string): string | undefined {
 }
 
 /**
- * Homepage / banner hero — compressed WebP ladder (not the 375KB+ PNG master).
- * Native art ~1024×409 (~2.5:1).
+ * Homepage hero — native-resolution ladder from hero-banner-new-2.png (1671×941).
+ * Desktop uses the PNG master so the banner stays sharp.
  */
 export const heroResponsive: ResponsiveWidth[] = [
-	{ src: '/images/hero-banner-1536.webp', width: 1536 },
-	{ src: '/images/hero-banner-1024.webp', width: 1024 },
-	{ src: '/images/hero-banner-768.webp', width: 768 },
+	{ src: '/images/hero-banner-960.webp', width: 960 },
+	{ src: '/images/hero-banner-1280.webp', width: 1280 },
+	{ src: '/images/hero-banner-new-2.png', width: 1671 },
 ];
 
 export const heroDesktopResponsive: ResponsiveWidth[] = heroResponsive;
 
-/** Default LCP src — mid ladder WebP (~56KB). */
-export const heroSrc = '/images/hero-banner-1024.webp';
+/** Default LCP src — original PNG. */
+export const heroSrc = '/images/hero-banner-new-2.png';
 export const heroSrcSet = buildSrcSet(heroResponsive);
-export const heroSizes = '(max-width: 900px) 100vw, 1536px';
+export const heroSizes = '100vw';
 
-/** LCP preload — same compressed WebP. */
+/** LCP preload — same master PNG. */
 export const heroPreloadSrc = heroSrc;
-export const heroMimeType = 'image/webp';
+export const heroMimeType = 'image/png';
 
-/** Exact native dimensions (no zoom crop). */
-export const heroWidth = 1024;
-export const heroHeight = 409;
+/** Native art dimensions. */
+export const heroWidth = 1671;
+export const heroHeight = 941;
 
 /** Responsive widths for below-fold content images. */
 export const contentWidths = [480, 960] as const;

@@ -31,22 +31,17 @@ const monthly = productInfo.plans.find((p) => p.id === 'monthly') ?? productInfo
 	.hero {
 		--hero-pad-y: clamp(1rem, 2vw, 1.75rem);
 		--hero-stack: clamp(0.5rem, 1.1vw, 0.75rem);
-		/*
-		 * Bar is a bit shorter than the native 1024/409 (~2.5:1) art.
-		 * Image stays undistorted via object-fit: cover (crops edges, no squash).
-		 */
-		--hero-ratio: 3.15 / 1;
 		position: relative;
 		isolation: isolate;
 		display: grid;
 		align-items: center;
 		overflow: hidden;
 		background: #050506;
-		aspect-ratio: var(--hero-ratio);
 		width: 100%;
-		height: auto;
-		min-height: 0;
-		max-height: none;
+		height: 100svh;
+		min-height: 100svh;
+		max-height: 100svh;
+		aspect-ratio: auto;
 	}
 
 	.hero__media {
@@ -63,10 +58,8 @@ const monthly = productInfo.plans.find((p) => p.id === 'monthly') ?? productInfo
 	}
 
 	.hero__media img {
-		/* Cover = keep proportions; crop top/bottom of the shorter bar */
 		object-fit: cover;
-		/* Prefer a bit higher in the frame so the USEC head stays in view */
-		object-position: right 28%;
+		object-position: right center;
 		image-rendering: auto;
 		transform: translateZ(0);
 		animation: hero-in 0.9s ease-out both;
@@ -79,10 +72,10 @@ const monthly = productInfo.plans.find((p) => p.id === 'monthly') ?? productInfo
 		pointer-events: none;
 		background: linear-gradient(
 			90deg,
-			rgba(5, 5, 6, 0.78) 0%,
-			rgba(5, 5, 6, 0.52) 34%,
-			rgba(5, 5, 6, 0.18) 58%,
-			transparent 74%
+			rgba(5, 5, 6, 0.62) 0%,
+			rgba(5, 5, 6, 0.32) 26%,
+			rgba(5, 5, 6, 0.1) 48%,
+			transparent 68%
 		);
 	}
 
@@ -90,9 +83,8 @@ const monthly = productInfo.plans.find((p) => p.id === 'monthly') ?? productInfo
 		position: relative;
 		z-index: 2;
 		padding-block: var(--hero-pad-y);
+		padding-top: calc(var(--header-h) + var(--hero-pad-y));
 		align-self: center;
-		/* Sit a touch above true center so title reads mid-image */
-		transform: translateY(clamp(-1.5rem, -3vw, -0.35rem));
 		display: grid;
 		grid-template-columns: minmax(0, 1fr);
 		justify-items: start;
@@ -165,13 +157,6 @@ const monthly = productInfo.plans.find((p) => p.id === 'monthly') ?? productInfo
 			transform 0.18s ease,
 			background 0.18s ease,
 			box-shadow 0.18s ease;
-	}
-
-	.hero__buy svg {
-		width: 1.05rem;
-		height: 1.05rem;
-		flex-shrink: 0;
-		opacity: 0.85;
 	}
 
 	.hero__buy-label {
@@ -311,21 +296,16 @@ const monthly = productInfo.plans.find((p) => p.id === 'monthly') ?? productInfo
 			transition: none;
 			transform: none;
 		}
-
-		.hero__content {
-			transform: translateY(clamp(-1.5rem, -3vw, -0.35rem));
-		}
 	}
 
 	/*
-	 * Phones / small tablets: stop using the ultra-wide 3.15:1 bar.
-	 * That ratio collapses to ~120px tall on a 390px phone and clips the CTA.
+	 * Phones / small tablets: drop the 16:9 viewport height.
 	 * Mobile = taller full-bleed panel; height grows with copy.
 	 */
 	@media (max-width: 900px) {
 		.hero {
 			aspect-ratio: auto;
-			min-height: 0;
+			min-height: 100svh;
 			max-height: none;
 			height: auto;
 			display: block;
@@ -334,7 +314,7 @@ const monthly = productInfo.plans.find((p) => p.id === 'monthly') ?? productInfo
 
 		.hero__media img {
 			object-fit: cover;
-			object-position: 78% 10%;
+			object-position: right 42%;
 		}
 
 		.hero__veil {
@@ -353,7 +333,7 @@ const monthly = productInfo.plans.find((p) => p.id === 'monthly') ?? productInfo
 			min-height: clamp(18.5rem, 56svh, 28rem);
 			display: flex;
 			align-items: flex-end;
-			padding-block: 1.35rem 1.2rem;
+			padding-top: calc(var(--header-h) + 0.5rem);
 			padding-bottom: max(1.2rem, env(safe-area-inset-bottom, 0px));
 			box-sizing: border-box;
 		}
@@ -410,7 +390,8 @@ const monthly = productInfo.plans.find((p) => p.id === 'monthly') ?? productInfo
 	@media (max-width: 480px) {
 		.hero__content {
 			min-height: clamp(17.5rem, 60svh, 26rem);
-			padding-block: 1.2rem 1.1rem;
+			padding-top: calc(var(--header-h) + 0.4rem);
+			padding-bottom: 1.1rem;
 		}
 
 		.hero__brand {
@@ -449,7 +430,8 @@ const monthly = productInfo.plans.find((p) => p.id === 'monthly') ?? productInfo
 	@media (max-width: 900px) and (orientation: landscape) and (max-height: 480px) {
 		.hero__content {
 			min-height: min(70svh, 16.5rem);
-			padding-block: 0.85rem 0.8rem;
+			padding-top: calc(var(--header-h) + 0.25rem);
+			padding-bottom: 0.8rem;
 		}
 
 		.hero__lede {

@@ -45,7 +45,8 @@
                   "delivery":  "Instant digital delivery",
                   "platform":  "Windows 10 \u0026 11",
                   "antiCheat":  "EA Javelin maintenance supported",
-                  "antiCheatShort":  "EA Javelin anti-cheat supported"
+                  "antiCheatShort":  "EA Javelin anti-cheat supported",
+                  "antiCheatBar":  "EA Javelin supported"
               },
     "product":  {
                     "title":  "Battlefield 6 Cheats",
@@ -109,6 +110,7 @@
                    "featureList":  "Feature list",
                    "pricingPlans":  "Pricing plans",
                    "buyerReviewsNav":  "Buyer reviews",
+                   "discord":  "Discord",
                    "copyright":  "© {{year}} {{brand}}"
                },
     "footer":  {
@@ -117,16 +119,17 @@
                    "tagline":  "Undetected Battlefield 6 cheats for PC.\nESP, wallhack, radar \u0026 aimbot."
                },
     "home":  {
-                 "aboutTitle":  "Undetected Battlefield 6 cheats for Battlefield 6",
-                 "aboutP1":  "Battlefield 6 Cheats is an undetected Battlefield 6 cheat package for Windows PC. One license includes ESP wallhack, soft aim, and 2D radar, with EA Javelin rebuilds after game patches. Compare plans on Store, then check Status before you match.",
-                 "aboutP2Before":  "Start with the",
-                 "aboutPillar":  "Battlefield 6 cheats pillar",
+                 "aboutTitle":  "undetected cheats for Battlefield 6",
+                 "aboutP1":  "Our Battlefield 6 cheats are an undetected package for Battlefield 6 on Windows PC. Watch the setup preview, then use ESP, soft aim, and radar in one license.",
+                 "aboutP2Before":  "See the",
+                 "aboutPillar":  "Features list",
                  "aboutEsp":  "ESP guide",
-                 "aboutAimbot":  "aimbot controls",
-                 "aboutUndetected":  "undetected status",
-                 "aboutP2Mid":  ", ",
-                 "aboutP2Or":  ", or ",
-                 "aboutP2After":  " if you are still comparing tools."
+                 "aboutAimbot":  "Aimbot controls",
+                 "aboutUndetected":  "Setup steps",
+                 "aboutP2Mid":  ", the ",
+                 "aboutP2Or":  ", and the ",
+                 "aboutP2After":  ".",
+                 "aboutImageAlt":  "Battlefield 6 cheats preview — ESP overlay on Windows PC"
              },
     "homeSeo":  {
                     "eyebrow":  "Guides",
@@ -178,10 +181,11 @@
                        "support247":  "24/7 support"
                    },
     "categoryRow":  {
-                        "hacks":  "Hacks",
+                        "hacks":  "Cheats",
                         "esp":  "ESP",
                         "aimbot":  "Aimbot",
-                        "radar":  "Radar",
+                        "radar":  "DMA",
+                        "features":  "Features",
                         "wallhack":  "Wallhack",
                         "undetected":  "Undetected",
                         "pricing":  "Pricing",
@@ -217,12 +221,12 @@
     "gallery":  {
                     "eyebrow":  "Battlefield 6 cheats",
                     "title":  "Battlefield 6 cheats gallery",
-                    "subtitle":  "Simple Battlefield 6 cheats visuals — ESP, wallhack, aimbot, and radar for Battlefield 6 on PC.",
-                    "lead":  "Battlefield 6 Cheats helps you spot enemies, vehicles, loot, and objectives with ESP, aimbot, and radar in one license.",
-                    "highlightEspTitle":  "Battlefield 6 cheats esp",
-                    "highlightEspCopy":  "See players through walls with Battlefield 6 cheats esp and wallhack overlays.",
-                    "highlightRadarTitle":  "Battlefield 6 cheats radar",
-                    "highlightRadarCopy":  "Track nearby threats with Battlefield 6 cheats radar before you push or objective.",
+                   "subtitle":  "Simple Battlefield 6 cheats visuals — ESP, wallhack, aimbot, and DMA for Battlefield 6 on PC.",
+                   "lead":  "Battlefield 6 Cheats helps you spot enemies, vehicles, and objectives with ESP, aimbot, and DMA in one license.",
+                   "highlightEspTitle":  "Battlefield 6 cheats esp",
+                   "highlightEspCopy":  "See players through walls with Battlefield 6 cheats esp and wallhack overlays.",
+                   "highlightRadarTitle":  "Battlefield 6 cheats DMA",
+                   "highlightRadarCopy":  "Track nearby threats with Battlefield 6 DMA before you push an objective.",
                     "highlightAimbotTitle":  "Battlefield 6 cheats aimbot",
                     "highlightAimbotCopy":  "Use soft aim and aimbot controls tuned for Battlefield 6 matches on Windows PC.",
                     "updatesLabel":  "Battlefield 6 cheats updates",

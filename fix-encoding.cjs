@@ -1,6 +1,6 @@
 const fs = require('fs');
 const files = [
-  'src/components/react/HomeAbout.tsx',
+  'src/components/HomeAbout.astro',
   'src/components/react/HomeSeo.tsx',
   'src/data/i18n/content.generated.ts',
   'src/middleware.ts',

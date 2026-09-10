@@ -1,0 +1,133 @@
+---
+import { defaultLocale, type LocaleCode } from '../data/i18n/locales';
+import { getLocalizedPath } from '../data/i18n/routing';
+import { getT } from '../i18n/server';
+
+interface Props {
+	locale?: LocaleCode;
+}
+
+const locale = Astro.props.locale ?? defaultLocale;
+const t = getT(locale);
+const previewSrc = '/images/hack-preview-image-2.webp';
+---
+
+<section class="home-about" aria-labelledby="home-about-title">
+	<div class="shell home-about__grid">
+		<div class="home-about__copy">
+			<h2 id="home-about-title">{t('home.aboutTitle')}</h2>
+			<p>{t('home.aboutP1')}</p>
+			<p>
+				{t('home.aboutP2Before')}{' '}
+				<a href={getLocalizedPath('features', locale)}>{t('home.aboutPillar')}</a>{t('home.aboutP2Mid')}<a href={getLocalizedPath('bf6-esp', locale)}>{t('home.aboutEsp')}</a>{t('home.aboutP2Mid')}<a href={getLocalizedPath('bf6-aimbot', locale)}>{t('home.aboutAimbot')}</a>{t('home.aboutP2Or')}<a href={getLocalizedPath('setup', locale)}>{t('home.aboutUndetected')}</a>{t('home.aboutP2After')}
+			</p>
+		</div>
+		<figure class="home-about__media">
+			<img
+				src={previewSrc}
+				alt={t('home.aboutImageAlt')}
+				width="960"
+				height="540"
+				loading="lazy"
+				decoding="async"
+			/>
+		</figure>
+	</div>
+</section>
+
+<style>
+	.home-about {
+		background: var(--bg);
+		padding-block: clamp(3.5rem, 8vw, 5.5rem);
+	}
+
+	.home-about__grid {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+		align-items: center;
+		gap: clamp(1.75rem, 5vw, 4.5rem);
+	}
+
+	.home-about__copy {
+		min-width: 0;
+		padding-left: 1.15rem;
+		border-left: 3px solid var(--magenta);
+	}
+
+	.home-about__copy h2 {
+		margin: 0 0 1.05rem;
+		font-family: var(--font-sans);
+		font-size: clamp(2rem, 4.2vw, 3.15rem);
+		font-weight: 800;
+		letter-spacing: -0.045em;
+		line-height: 1.05;
+		text-transform: lowercase;
+		color: #fff;
+	}
+
+	.home-about__copy p {
+		margin: 0;
+		max-width: 38rem;
+		font-size: 1rem;
+		line-height: 1.65;
+		color: color-mix(in srgb, #fff 72%, var(--ink-muted));
+	}
+
+	.home-about__copy p + p {
+		margin-top: 0.95rem;
+	}
+
+	.home-about__copy a {
+		color: #fff;
+		font-weight: 600;
+		text-decoration: underline;
+		text-underline-offset: 0.18em;
+		text-decoration-color: color-mix(in srgb, #fff 28%, transparent);
+	}
+
+	.home-about__copy a:hover {
+		color: var(--magenta-soft);
+		text-decoration-color: var(--magenta-soft);
+	}
+
+	.home-about__media {
+		margin: 0;
+		min-width: 0;
+		border-radius: 1.15rem;
+		overflow: hidden;
+		background: #090909;
+		aspect-ratio: 16 / 10;
+	}
+
+	.home-about__media img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+
+	@media (max-width: 900px) {
+		.home-about {
+			padding-block: 2.75rem 3rem;
+		}
+
+		.home-about__grid {
+			grid-template-columns: 1fr;
+			gap: 1.75rem;
+		}
+
+		.home-about__copy {
+			padding-left: 0.95rem;
+		}
+
+		.home-about__copy h2 {
+			font-size: clamp(1.7rem, 7.5vw, 2.35rem);
+		}
+
+		.home-about__media {
+			aspect-ratio: 16 / 11;
+			border-radius: 1rem;
+		}
+	}
+</style>

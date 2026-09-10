@@ -55,6 +55,11 @@ const ogImageURL = new URL(ogImage, siteConfig.url).href;
 const logoURL = new URL(siteConfig.logoRaster, siteConfig.url).href;
 const ogImageIsLogo = ogImage === siteConfig.logo;
 const ogImageType = ogImage.endsWith('.webp') ? 'image/webp' : 'image/png';
+const lcpType = (lcpImage ?? '').endsWith('.png')
+	? 'image/png'
+	: (lcpImage ?? '').endsWith('.jpg') || (lcpImage ?? '').endsWith('.jpeg')
+		? 'image/jpeg'
+		: 'image/webp';
 const ogImageWidth = ogImageIsLogo ? '512' : '1920';
 const ogImageHeight = ogImageIsLogo ? '512' : '1080';
 const twitterCard = ogImageIsLogo ? 'summary' : 'summary_large_image';
@@ -195,7 +200,7 @@ if (aboutNode) {
 					rel="preload"
 					as="image"
 					href={lcpImage ?? lcpImageSrcSet.split(' ')[0]}
-					type="image/webp"
+					type={lcpType}
 					fetchpriority="high"
 					imagesrcset={lcpImageSrcSet}
 					imagesizes={lcpImageSizes}
@@ -206,7 +211,7 @@ if (aboutNode) {
 						rel="preload"
 						as="image"
 						href={lcpImage}
-						type="image/webp"
+						type={lcpType}
 						fetchpriority="high"
 					/>
 				)

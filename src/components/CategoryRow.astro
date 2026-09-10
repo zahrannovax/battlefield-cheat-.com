@@ -1,7 +1,5 @@
 ---
-import { getLocalizedPath } from '../data/i18n/routing';
 import { defaultLocale, type LocaleCode } from '../data/i18n/locales';
-import { getBlogBasePath } from '../data/blog/helpers';
 import { getT } from '../i18n/server';
 
 interface Props {
@@ -11,88 +9,61 @@ interface Props {
 const locale = Astro.props.locale ?? defaultLocale;
 const t = getT(locale);
 
-const categories = [
-	{ label: t('categoryRow.hacks'), href: getLocalizedPath('hacks', locale) },
-	{ label: t('categoryRow.esp'), href: getLocalizedPath('bf6-esp', locale) },
-	{ label: t('categoryRow.aimbot'), href: getLocalizedPath('bf6-aimbot', locale) },
-	{ label: t('categoryRow.radar'), href: getLocalizedPath('radar', locale) },
-	{ label: t('categoryRow.wallhack'), href: getLocalizedPath('wallhack', locale) },
-	{ label: t('categoryRow.undetected'), href: getLocalizedPath('undetected', locale) },
-	{ label: t('categoryRow.pricing'), href: getLocalizedPath('pricing', locale) },
-	{ label: t('categoryRow.setup'), href: getLocalizedPath('setup', locale) },
-	{ label: t('categoryRow.blog'), href: getBlogBasePath(locale) },
+const trust = [
+	{ label: t('trust.status'), online: true },
+	{ label: t('trust.delivery') },
+	{ label: t('trust.platform') },
+	{ label: t('trust.antiCheatBar') },
 ];
 ---
 
-<nav class="cats" aria-label={t('common.browse')}>
-	<div class="shell">
-		<ul class="cats__list">
-			{
-				categories.map((cat) => (
-					<li>
-						<a href={cat.href}>{cat.label}</a>
-					</li>
-				))
-			}
-		</ul>
-	</div>
-</nav>
+<section class="home-strip">
+	<p class="home-strip__trust">
+		{
+			trust.map((item, i) => (
+				<>
+					{i > 0 ? <span class="home-strip__dot" aria-hidden="true">·</span> : null}
+					<span class:list={[{ 'home-strip__online': item.online }]}>{item.label}</span>
+				</>
+			))
+		}
+	</p>
+</section>
 
 <style>
-	.cats {
-		border-block: 1px solid var(--line-soft);
-		background: var(--bg-panel);
+	.home-strip {
+		background: var(--bg);
+		border-top: 1px solid rgba(255, 255, 255, 0.06);
 	}
 
-	.cats__list {
+	.home-strip__trust {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
-		gap: 0.5rem;
+		justify-content: center;
+		gap: 0.45rem 0.55rem;
 		margin: 0;
-		padding: 1rem 0;
-		list-style: none;
-	}
-
-	.cats__list a {
-		display: inline-flex;
-		align-items: center;
-		padding: 0.4rem 0.8rem;
-		border: 1px solid var(--line);
-		border-radius: var(--radius-pill);
-		background: var(--bg-elevated);
+		padding: 0.85rem 1.25rem;
 		font-size: 0.8125rem;
-		font-weight: 500;
-		color: var(--ink-muted);
-		transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+		line-height: 1.4;
+		color: rgba(255, 255, 255, 0.72);
+		text-align: center;
 	}
 
-	.cats__list a:hover {
-		color: var(--ink);
-		border-color: color-mix(in srgb, var(--magenta) 45%, var(--line));
-		background: color-mix(in srgb, var(--magenta) 10%, var(--bg-elevated));
+	.home-strip__online {
+		color: #22c55e;
+		font-weight: 600;
+	}
+
+	.home-strip__dot {
+		color: rgba(255, 255, 255, 0.28);
+		font-weight: 700;
 	}
 
 	@media (max-width: 720px) {
-		.cats__list {
-			flex-wrap: nowrap;
-			overflow-x: auto;
-			scrollbar-width: none;
-			margin-inline: calc(var(--page-gutter) * -1);
+		.home-strip__trust {
 			padding-inline: var(--page-gutter);
-			padding-bottom: 0.15rem;
-			-webkit-overflow-scrolling: touch;
-		}
-
-		.cats__list::-webkit-scrollbar {
-			display: none;
-		}
-
-		.cats__list a {
-			white-space: nowrap;
-			flex-shrink: 0;
-			min-height: var(--touch-min, 2.75rem);
-			padding-inline: 1rem;
+			font-size: 0.75rem;
 		}
 	}
 </style>

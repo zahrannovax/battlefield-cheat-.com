@@ -95,6 +95,7 @@ export const siteConfig = {
 	logoRasterWidth: brand.logoRasterWidth,
 	logoRasterHeight: brand.logoRasterHeight,
 	logoAlt: brand.logoAlt,
+	discordUrl: brand.discordUrl,
 	checkoutUrl: brand.checkoutUrl,
 	defaultOgImage: brand.defaultOgImage,
 	heroImage: brand.heroImage,

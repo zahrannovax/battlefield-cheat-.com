@@ -2,7 +2,7 @@ import { siteConfig } from './site';
 
 /** Product screenshots — BF6 images will be added when provided. */
 export const tarkovImages = {
-	hero: '/images/hero-banner-new-1.png',
+	hero: '/images/hero-banner-new-2.png',
 	espWallhack: '/images/hero-banner-new-1.png',
 	aimbotCombat: '/images/hero-banner-new-1.png',
 	aimbotSkeleton: '/images/hero-banner-new-1.png',

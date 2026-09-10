@@ -111,15 +111,6 @@ function HeroInner({
 					</p>
 					<div className="hero__actions">
 						<a className="hero__buy" href={checkoutUrl} rel="noopener noreferrer">
-							<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-								<path
-									d="M4.5 6.5h2.1l1.2 9.2h9.4l1.8-6.6H8.1M9.2 19.2a.9.9 0 100-1.8.9.9 0 000 1.8zm7.4 0a.9.9 0 100-1.8.9.9 0 000 1.8z"
-									stroke="currentColor"
-									strokeWidth="1.7"
-									strokeLinecap="round"
-									strokeLinejoin="round"
-								/>
-							</svg>
 							<span className="hero__buy-label" data-edit={useBrandHero ? 'ctaBuy' : undefined}>
 								{ctaBuy}
 							</span>
