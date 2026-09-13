@@ -93,6 +93,7 @@ function isActive(href: string) {
 					aria-expanded="false"
 					aria-controls="site-nav-panel"
 					aria-label={t('nav.openMenu')}
+					data-close-label={t('nav.closeMenu')}
 				>
 					<span class="site-menu__bars" aria-hidden="true">
 						<span></span>
@@ -103,8 +104,22 @@ function isActive(href: string) {
 			</div>
 		</div>
 
+		<div class="site-nav-backdrop" data-nav-backdrop hidden></div>
+
 		<div class="site-panel" id="site-nav-panel" data-nav-panel hidden>
-			<nav class="site-panel__nav" data-nav-clone aria-label={t('nav.mobileAria')}></nav>
+			<nav class="site-panel__nav" aria-label={t('nav.mobileAria')}>
+				{
+					links.map((item) => (
+						<a
+							href={item.href}
+							class:list={[{ 'is-active': isActive(item.href) }]}
+							aria-current={isActive(item.href) ? 'page' : undefined}
+						>
+							<span data-edit={item.edit}>{item.label}</span>
+						</a>
+					))
+				}
+			</nav>
 			<div class="site-panel__foot">
 				<div class="site-panel__lang">
 					<LanguageSwitcher currentLocale={locale} pageId={pageId} />
@@ -127,25 +142,31 @@ function isActive(href: string) {
 	.site-header {
 		position: sticky;
 		top: 0;
-		z-index: 100;
+		z-index: 1000;
+		isolation: isolate;
 		padding-top: var(--safe-top, env(safe-area-inset-top, 0px));
 		background: transparent;
+		pointer-events: auto;
 	}
 
 	.site-header--overlay {
 		position: fixed;
+		top: 0;
 		left: 0;
 		right: 0;
 		width: 100%;
 	}
 
 	.site-header__wrap {
+		position: relative;
+		z-index: 1;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		padding-block: 0.7rem;
 		min-height: var(--header-h);
 		box-sizing: border-box;
+		width: 100%;
 		max-width: 100%;
 	}
 
@@ -304,6 +325,8 @@ function isActive(href: string) {
 	}
 
 	.site-menu {
+		position: relative;
+		z-index: 3;
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
@@ -316,6 +339,15 @@ function isActive(href: string) {
 		color: #fff;
 		flex-shrink: 0;
 		cursor: pointer;
+		pointer-events: auto;
+		-webkit-user-select: none;
+		user-select: none;
+	}
+
+	.site-menu::before {
+		content: '';
+		position: absolute;
+		inset: -0.35rem;
 	}
 
 	.site-menu__bars {
@@ -347,12 +379,29 @@ function isActive(href: string) {
 		transform: translateY(-5px) rotate(-45deg);
 	}
 
+	.site-nav-backdrop {
+		position: fixed;
+		inset: 0;
+		z-index: 0;
+		background: rgba(0, 0, 0, 0.48);
+		border: 0;
+		padding: 0;
+		cursor: pointer;
+	}
+
+	.site-nav-backdrop[hidden],
+	.site-panel[hidden] {
+		display: none;
+	}
+
 	.site-panel {
+		position: relative;
+		z-index: 1;
 		width: min(100%, 68rem);
 		margin-top: 0.55rem;
 		padding: 0.85rem 0.75rem 0.9rem;
 		border-radius: 1.35rem;
-		background: rgba(0, 0, 0, 0.82);
+		background: rgba(0, 0, 0, 0.92);
 		border: 1px solid rgba(255, 255, 255, 0.12);
 		backdrop-filter: blur(18px) saturate(1.2);
 		-webkit-backdrop-filter: blur(18px) saturate(1.2);
@@ -363,17 +412,12 @@ function isActive(href: string) {
 		overscroll-behavior: contain;
 	}
 
-	.site-panel[hidden] {
-		display: none;
-	}
-
-	.site-panel__nav,
-	.site-panel [data-nav-clone] {
+	.site-panel__nav {
 		display: grid;
 		gap: 0.15rem;
 	}
 
-	.site-panel [data-nav-clone] a {
+	.site-panel__nav a {
 		display: flex;
 		align-items: center;
 		min-height: var(--touch-min, 2.75rem);
@@ -385,13 +429,13 @@ function isActive(href: string) {
 		opacity: 1;
 	}
 
-	.site-panel [data-nav-clone] a:hover,
-	.site-panel [data-nav-clone] a.is-active {
+	.site-panel__nav a:hover,
+	.site-panel__nav a.is-active {
 		background: rgba(255, 255, 255, 0.08);
 		opacity: 1;
 	}
 
-	.site-panel [data-nav-clone] a.is-active::after {
+	.site-panel__nav a.is-active::after {
 		display: none;
 	}
 
@@ -409,7 +453,9 @@ function isActive(href: string) {
 			display: flex;
 		}
 
-		.site-menu {
+		.site-menu,
+		.site-panel,
+		.site-nav-backdrop {
 			display: none;
 		}
 
@@ -447,7 +493,9 @@ function isActive(href: string) {
 			max-width: 100%;
 			min-width: 0;
 			padding-inline: 0.3rem;
-			overflow: hidden;
+			overflow: visible;
+			position: relative;
+			z-index: 2;
 		}
 
 		.site-tools {
@@ -589,33 +637,43 @@ function isActive(href: string) {
 
 		const toggle = header.querySelector<HTMLButtonElement>('[data-nav-toggle]');
 		const panel = header.querySelector<HTMLElement>('[data-nav-panel]');
-		const cloneHost = header.querySelector<HTMLElement>('[data-nav-clone]');
-		const desktopNav = header.querySelector<HTMLElement>('.site-nav');
+		const backdrop = header.querySelector<HTMLElement>('[data-nav-backdrop]');
 		if (!toggle || !panel) return;
 
 		const openLabel = toggle.getAttribute('aria-label') || 'Open menu';
-		const closeLabel = 'Close menu';
+		const closeLabel = toggle.getAttribute('data-close-label') || 'Close menu';
+		const desktopMq = window.matchMedia('(min-width: 1025px)');
 
 		const setOpen = (open: boolean) => {
-			header.classList.toggle('is-open', open);
-			toggle.setAttribute('aria-expanded', String(open));
-			toggle.setAttribute('aria-label', open ? closeLabel : openLabel);
-			panel.hidden = !open;
-			document.body.classList.toggle('nav-lock', open);
+			const next = open && !desktopMq.matches;
+			header.classList.toggle('is-open', next);
+			toggle.setAttribute('aria-expanded', String(next));
+			toggle.setAttribute('aria-label', next ? closeLabel : openLabel);
+			panel.hidden = !next;
+			if (backdrop) backdrop.hidden = !next;
+			document.body.classList.toggle('nav-lock', next);
 		};
 
-		const cloneNav = () => {
-			if (!cloneHost || !desktopNav) return;
-			cloneHost.replaceChildren();
-			desktopNav.querySelectorAll('a').forEach((link) => {
-				const copy = link.cloneNode(true) as HTMLAnchorElement;
-				copy.addEventListener('click', () => setOpen(false));
-				cloneHost.appendChild(copy);
+		toggle.addEventListener('click', (event) => {
+			event.preventDefault();
+			event.stopPropagation();
+			setOpen(!header.classList.contains('is-open'));
+		});
+
+		backdrop?.addEventListener('click', () => setOpen(false));
+
+		panel.querySelectorAll('a').forEach((link) => {
+			link.addEventListener('click', () => {
+				const href = link.getAttribute('href');
+				if (!href) {
+					setOpen(false);
+					return;
+				}
+				const next = new URL(href, window.location.href);
+				if (next.origin === window.location.origin && next.pathname === window.location.pathname) {
+					setOpen(false);
+				}
 			});
-		};
-
-		toggle.addEventListener('click', () => {
-			setOpen(toggle.getAttribute('aria-expanded') !== 'true');
 		});
 
 		const onScroll = () => {
@@ -629,12 +687,15 @@ function isActive(href: string) {
 			if (event.key === 'Escape') setOpen(false);
 		});
 
-		window.addEventListener('resize', () => {
-			if (window.matchMedia('(min-width: 1025px)').matches) setOpen(false);
+		desktopMq.addEventListener('change', () => {
+			if (desktopMq.matches) setOpen(false);
 		});
-
-		requestAnimationFrame(cloneNav);
 	}
 
-	document.querySelectorAll<HTMLElement>('[data-nav]').forEach(initNav);
+	const startNav = () => {
+		document.querySelectorAll<HTMLElement>('[data-nav]').forEach(initNav);
+	};
+
+	startNav();
+	document.addEventListener('astro:page-load', startNav);
 </script>
