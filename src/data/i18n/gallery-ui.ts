@@ -19,7 +19,7 @@ export const galleryUi: Record<LocaleCode, GalleryUi> = {
 		highlights: [
 			{ title: "Battlefield 6 cheats esp", copy: "See players through walls with Battlefield 6 cheats esp and wallhack overlays." },
 			{ title: "Battlefield 6 cheats DMA", copy: "Track nearby threats with Battlefield 6 DMA before you push an objective." },
-			{ title: "Battlefield 6 cheats aimbot", copy: "Use soft aim and aimbot controls tuned for Battlefield 6 matches on Windows PC." },
+			{ title: "Battlefield 6 cheats aimbot", copy: "Use aimbot controls tuned for Battlefield 6 matches on Windows PC." },
 		],
 		updatesLabel: "Battlefield 6 cheats updates",
 		updatesShort: "Updates",

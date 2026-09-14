@@ -14,13 +14,13 @@ export type BrandSitemapImage = {
 const defaultImages: BrandSitemapImage[] = [
 	{
 		src: '/images/hero-banner-new-2.png',
-		title: 'battlefield 6 cheats hero',
-		caption: 'battlefield 6 cheats ESP and aimbot on Windows PC',
+		title: 'Battlefield 6 Cheats hero',
+		caption: 'Battlefield 6 cheats ESP and aimbot on Windows PC',
 	},
 	{
-		src: '/images/hero-banner-new-2.png',
-		title: 'battlefield 6 cheats preview',
-		caption: 'battlefield 6 cheats — AWS, Cloud-DMA, ESP, aimbot',
+		src: '/images/navbar-logo.webp',
+		title: 'Battlefield 6 Cheats logo',
+		caption: 'Battlefield 6 cheats — AWS, Cloud-DMA, ESP, and aimbot',
 	},
 ];
 

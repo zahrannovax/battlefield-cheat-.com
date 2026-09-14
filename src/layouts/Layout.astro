@@ -70,6 +70,15 @@ const ogLocaleAlternates = locales.filter((l) => l.code !== locale);
 const schemaLanguage = localeMeta.ogLocale.replace('_', '-');
 const schemaLanguages = locales.map((l) => l.ogLocale.replace('_', '-'));
 const worldwidePlace = { '@type': 'Place' as const, name: siteConfig.market };
+const supportEmail = siteConfig.supportEmail?.trim();
+const orgContact: Record<string, unknown> = {
+	'@type': 'ContactPoint',
+	contactType: 'customer support',
+	areaServed: worldwidePlace,
+	availableLanguage: locales.map((l) => l.name),
+	url: siteConfig.discordUrl,
+};
+if (supportEmail) orgContact.email = supportEmail;
 
 const graph: Record<string, unknown>[] = [
 	{
@@ -109,7 +118,8 @@ const graph: Record<string, unknown>[] = [
 		'@id': `${siteConfig.url}/#organization`,
 		name: siteConfig.name,
 		url: siteConfig.url,
-		email: siteConfig.supportEmail,
+		...(supportEmail ? { email: supportEmail } : {}),
+		sameAs: [siteConfig.discordUrl],
 		areaServed: worldwidePlace,
 		logo: {
 			'@type': 'ImageObject',
@@ -118,13 +128,7 @@ const graph: Record<string, unknown>[] = [
 			height: siteConfig.logoRasterHeight,
 		},
 		image: logoURL,
-		contactPoint: {
-			'@type': 'ContactPoint',
-			contactType: 'customer support',
-			email: siteConfig.supportEmail,
-			areaServed: worldwidePlace,
-			availableLanguage: locales.map((l) => l.name),
-		},
+		contactPoint: orgContact,
 	},
 ];
 

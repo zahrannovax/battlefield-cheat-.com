@@ -17,7 +17,7 @@ const PREFERRED_HOSTS = [
 	englishPaths['bf6-esp'],
 	englishPaths['bf6-aimbot'],
 	englishPaths.hacks,
-	englishPaths.undetected,
+	englishPaths.radar,
 ] as const;
 
 /**

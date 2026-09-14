@@ -5,9 +5,9 @@
  */
 export const brand = {
 	/** Public brand name (nav, footer, H1 hero, schema Organization) */
-	name: 'battlefield 6 cheats',
+	name: 'Battlefield 6 Cheats',
 	/** Short product label if needed */
-	shortName: 'bf6 cheats',
+	shortName: 'BF6 Cheats',
 	/** Canonical origin — no trailing slash */
 	url: 'https://battlefieldcheat.com',
 	locale: 'en',
@@ -22,11 +22,11 @@ export const brand = {
 	/** Anti-cheat name used in Status / FAQ copy */
 	antiCheat: 'EA Javelin',
 
-	logo: '/images/zadeyo-logo.webp',
-	logoRaster: '/images/zadeyo-logo.png',
-	logoRasterWidth: 512,
-	logoRasterHeight: 512,
-	logoAlt: 'battlefield 6 cheats logo',
+	logo: '/images/navbar-logo.webp',
+	logoRaster: '/images/navbar-logo.png',
+	logoRasterWidth: 256,
+	logoRasterHeight: 256,
+	logoAlt: 'Battlefield 6 Cheats logo',
 	defaultOgImage: '/images/hero-banner-new-2.png',
 	heroImage: '/images/hero-banner-new-2.png',
 
@@ -75,9 +75,9 @@ export const brand = {
 	seo: {
 		/** Titles ≤60 chars; descriptions ~140–160 (Google SERP display). */
 		/** Home = brand hub. Money URL /battlefield-6-cheats/ owns the head term. */
-		homeTitle: 'Battlefield 6 Cheats | Official Windows PC Site',
+		homeTitle: 'Official Site | Battlefield 6 Cheats',
 		homeDescription:
-			'Official battlefield 6 cheats site for Windows PC. Compare features, store plans, and live status — then buy ESP, aimbot, and DMA options in one license.',
+			'Official battlefield 6 cheats hub for Windows PC. Compare features, store plans, and live status — then buy ESP, aimbot, and DMA in one license.',
 		featuresTitle: '{game} Features | {brand}',
 		featuresDescription:
 			'Everything in one {game} license for Windows PC — AWS cloud, Cloud-DMA, ESP, aimbot, and {antiCheat} patch updates. See what is included.',
@@ -144,7 +144,7 @@ export const brand = {
 	 */
 	sitemap: {
 		/** YYYY-MM-DD — Brand Studio can bump this on save to refresh crawl dates */
-		contentLastmod: '2026-08-20',
+		contentLastmod: '2026-09-14',
 		blogImageTitle: '{brand} blog',
 		blogImageCaption: 'Tips and updates for {primaryKeyword}',
 		reviewsImageTitle: '{brand} reviews',
@@ -152,13 +152,13 @@ export const brand = {
 		images: [
 			{
 				src: '/images/hero-banner-new-2.png',
-				title: 'battlefield 6 cheats hero',
-				caption: 'battlefield 6 cheats ESP and aimbot on Windows PC',
+				title: 'Battlefield 6 Cheats hero',
+				caption: 'Battlefield 6 cheats ESP and aimbot on Windows PC',
 			},
 			{
-				src: '/images/hero-banner-new-2.png',
-				title: 'battlefield 6 cheats preview',
-				caption: 'battlefield 6 cheats — AWS, Cloud-DMA, ESP, aimbot',
+				src: '/images/navbar-logo.webp',
+				title: 'Battlefield 6 Cheats logo',
+				caption: 'Battlefield 6 cheats — AWS, Cloud-DMA, ESP, and aimbot',
 			},
 		],
 	},
@@ -187,7 +187,10 @@ export function seoTitle(topic: string): string {
 /** Keep descriptions short; tokens allowed. */
 export function seoDescription(template: string): string {
 	const text = fillBrandTokens(template).trim();
-	return text.length <= 160 ? text : `${text.slice(0, 157).trim()}…`;
+	if (text.length <= 160) return text;
+	const trimmed = text.slice(0, 160);
+	const lastSpace = trimmed.lastIndexOf(' ');
+	return lastSpace > 130 ? trimmed.slice(0, lastSpace) : trimmed;
 }
 
 /** Resolved EN home meta from brand.seo (title clamp lives in site-core.seoPageTitle). */

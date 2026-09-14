@@ -45,7 +45,7 @@ function readBrand() {
 }
 
 const brand = readBrand();
-const description = `Undetected ${brand.primary} — ESP, aimbot, and radar for PC`;
+const description = `Undetected ${brand.primary} — ESP, aimbot, and DMA for PC`;
 
 writeFileSync(
 	path.join(ROOT, 'public/robots.txt'),

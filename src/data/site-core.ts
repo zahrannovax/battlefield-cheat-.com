@@ -7,7 +7,10 @@ import { brand, fillBrandTokens, seoDescription, seoTitle } from './brand';
 export function seoPageTitle(template: string): string {
 	const text = fillBrandTokens(template).trim();
 	/** Google SERP titles typically display ~50–60 chars; clamp at 60. */
-	return text.length <= 60 ? text : `${text.slice(0, 57).trim()}…`;
+	if (text.length <= 60) return text;
+	const trimmed = text.slice(0, 60);
+	const lastSpace = trimmed.lastIndexOf(' ');
+	return lastSpace > 45 ? trimmed.slice(0, lastSpace) : trimmed;
 }
 
 export { brand, fillBrandTokens, seoDescription, seoTitle };
@@ -40,9 +43,9 @@ const copyDefaults = {
 } as const;
 
 const seoDefaults = {
-	homeTitle: 'Battlefield 6 Cheats | Official Windows PC Site',
+	homeTitle: 'Official Site | Battlefield 6 Cheats',
 	homeDescription:
-		'{primaryKeyword} for Windows PC — AWS, Cloud-DMA, ESP, and aimbot with {antiCheat} maintenance. Compare plans and buy.',
+		'Official {primaryKeyword} hub for Windows PC. Compare features, store plans, and live status before you buy.',
 	featuresTitle: '{game} Features | {brand}',
 	featuresDescription:
 		'Everything in one {game} license for Windows PC — AWS cloud, Cloud-DMA, ESP, aimbot, and patch updates.',

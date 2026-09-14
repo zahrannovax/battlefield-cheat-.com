@@ -33,7 +33,7 @@ export function getFaqCrawlImage(item: FaqItem) {
 
 /** English FAQ answer routes for sitemap-en.xml — every URL includes a crawl photo. */
 export function getFaqSitemapEntries() {
-	const lastmod = '2026-08-11';
+	const lastmod = '2026-09-14';
 
 	return seoFaqs.map((item) => {
 		const photo = getFaqCrawlImage(item);

@@ -46,7 +46,7 @@ export const seoLandingPages = [
 	{ label: fillBrandTokens('{game} aimbot'), href: '/battlefield-6-aimbot/' },
 	{ label: fillBrandTokens('{game} setup'), href: '/setup/' },
 	{ label: fillBrandTokens('Undetected {primaryKeyword}'), href: '/battlefield-6-cheats/' },
-	{ label: fillBrandTokens('{game} wallhack'), href: '/battlefield-6-wallhack/' },
+	{ label: fillBrandTokens('{game} wallhack'), href: '/battlefield-6-esp/' },
 	{ label: fillBrandTokens('bf6 dma cheats'), href: '/bf6-dma-cheats/' },
 ] as const;
 
@@ -325,8 +325,8 @@ export const customerReviews = [
 	reviewMeta({
 		handle: 'hardpoint_hunterX',
 		rating: 5,
-		text: 'Perfect for competitive modes. Loot ESP helps me prioritise ammo and med kits fast. Aimbot smoothness is configurable enough to not look obvious in killcams.',
-		short: 'Loot ESP and configurable aimbot smoothness are excellent.',
+		text: 'Perfect for competitive modes. ESP boxes help me read flanks before I push. Aimbot smoothness is configurable enough to not look obvious in killcams.',
+		short: 'ESP boxes and configurable aimbot smoothness are excellent.',
 		slug: 'bf6-competitive-review-hardpointhunterx',
 		seoTitle: 'Competitive Review by @hardpoint_hunterX — 5/5 | {brand}',
 		seoDescription: '@hardpoint_hunterX rates {brand} 5/5 for competitive Battlefield 6 on PC.',

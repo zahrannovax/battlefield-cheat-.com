@@ -1,5 +1,5 @@
 import type { PageId } from './content.generated';
-import { fillBrandTokens, seoDescription } from '../brand';
+import { brand, fillBrandTokens, seoDescription } from '../brand';
 import { brandCopy, brandSeo, seoPageTitle } from '../site-core';
 
 export type SimpleSection = {
@@ -326,7 +326,7 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 		intro: brandCopy.supportIntro,
 		ctaPrimary: 'Buy Now',
 		ctaSecondary: 'Discord',
-		ctaSecondaryHref: 'https://discord.gg/t6n2cUNkPT',
+		ctaSecondaryHref: brand.discordUrl,
 		galleryTitle: 'In-game look',
 		sections: [
 			{
@@ -365,6 +365,89 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 				h2: 'Refunds',
 				paragraphs: ['Read the refund policy before you buy if you need details.'],
 				list: ['<a href="/refund-policy/">Refund policy</a>', '<a href="/support/">Support</a>'],
+			},
+		],
+	}),
+	privacy: page({
+		title: 'Privacy Policy | {brand}',
+		description:
+			'How {brand} handles support messages, order data, and checkout on this site. Short privacy notes before you buy or contact Discord.',
+		h1: 'Privacy Policy',
+		intro: 'How we handle information when you browse this site or contact support about a {game} license.',
+		ctaPrimary: 'Support',
+		ctaSecondary: 'Terms of use',
+		ctaSecondaryHref: '/terms/',
+		galleryTitle: 'Legal',
+		sections: [
+			{
+				h2: 'What we collect',
+				paragraphs: [
+					'We may collect contact details you send, order IDs for support, and basic technical data used to run the site.',
+				],
+				list: ['Discord messages you send', 'Order IDs for support', 'Basic site security data'],
+			},
+			{
+				h2: 'How we use it',
+				paragraphs: ['We use it to answer support, fix order issues, and keep the site working. We do not sell personal data.'],
+			},
+			{
+				h2: 'Contact',
+				paragraphs: ['Ask Discord support if you need a correction. Also see Terms and the refund policy.'],
+				list: ['<a href="/terms/">Terms of use</a>', '<a href="/refund-policy/">Refund policy</a>', '<a href="/support/">Support</a>'],
+			},
+		],
+	}),
+	refund: page({
+		title: 'Refund Policy | {brand}',
+		description:
+			'Refund terms for {brand} digital licenses. Delivery starts after payment, so refunds are limited. Read this before you buy.',
+		h1: 'Refund Policy',
+		intro: 'Refund terms for digital {brand} licenses on Windows PC.',
+		ctaPrimary: 'Support',
+		ctaSecondary: 'Privacy policy',
+		ctaSecondaryHref: '/privacy-policy/',
+		galleryTitle: 'Billing',
+		sections: [
+			{
+				h2: 'Digital delivery',
+				paragraphs: ['Licenses deliver digitally after payment. Access can start right away, so refunds are limited.'],
+				list: ['Submit within 24 hours', 'Include your order ID', 'Explain the issue'],
+			},
+			{
+				h2: 'When we may refund',
+				paragraphs: ['Duplicate charges, failed delivery after paid checkout, or verified activation failures may qualify.'],
+			},
+			{
+				h2: 'How to ask',
+				paragraphs: ['Open Discord support with your order ID, purchase date, and a short summary. Chargebacks without contact may revoke the license.'],
+				list: ['<a href="/support/">Support</a>', '<a href="/pricing/">Store</a>'],
+			},
+		],
+	}),
+	terms: page({
+		title: 'Terms of Use | {brand}',
+		description:
+			'Terms for battlefieldcheat.com and {brand} licenses. Usage rules, anti-cheat risk, and liability for Windows PC software.',
+		h1: 'Terms of Use',
+		intro: 'Terms for this site and {brand} licenses for {game} on Windows PC.',
+		ctaPrimary: 'Support',
+		ctaSecondary: 'Privacy policy',
+		ctaSecondaryHref: '/privacy-policy/',
+		galleryTitle: 'Legal',
+		sections: [
+			{
+				h2: 'License use',
+				paragraphs: ['A license is for one buyer on Windows PC. Do not share keys. Game and {antiCheat} rules still apply.'],
+			},
+			{
+				h2: 'Risk',
+				paragraphs: ['No cheat stays undetected forever. Check Status after patches. You accept game-ban risk when you use the software.'],
+				list: ['<a href="/updates/">Status</a>', '<a href="/refund-policy/">Refund policy</a>'],
+			},
+			{
+				h2: 'Contact',
+				paragraphs: ['Questions about these terms go to Discord support with your order ID.'],
+				list: ['<a href="/support/">Support</a>', '<a href="/privacy-policy/">Privacy</a>'],
 			},
 		],
 	}),

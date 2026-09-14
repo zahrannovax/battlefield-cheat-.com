@@ -19,7 +19,7 @@ function HomeSeoInner({ faqs }: Props) {
 				{ href: '/features/', labelKey: 'homeSeo.linkAllFeatures' },
 				{ href: '/battlefield-6-esp/', labelKey: 'homeSeo.linkEsp' },
 				{ href: '/battlefield-6-aimbot/', labelKey: 'homeSeo.linkAimbot' },
-				{ href: '/battlefield-6-esp/', labelKey: 'homeSeo.linkRadar' },
+				{ href: '/bf6-dma-cheats/', labelKey: 'homeSeo.linkRadar' },
 			],
 		},
 		{

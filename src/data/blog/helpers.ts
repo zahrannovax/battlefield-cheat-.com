@@ -11,18 +11,20 @@ import { resolvePageContextFromPath } from '../i18n/routing';
 import type { BlogImageKey, BlogPostDefinition, BlogTranslation, ResolvedBlogPost } from './types';
 import { blogPosts as rawBlogPosts } from './posts.generated';
 
+const HERO = '/images/hero-banner-new-2.png';
+
 const imageMap: Record<BlogImageKey, string> = {
-	hero: '/images/blog-image-1.jpg',
-	espWallhack: '/images/hack-preview-image-1.webp',
-	aimbotCombat: '/images/hack-preview-image-2.webp',
-	aimbotSkeleton: '/images/blog-image-2.jpg',
-	squadFight: '/images/blog-image-3.webp',
-	headerArt: '/images/blog-image-4.avif',
-	cheatsPackage: '/images/blog-image-5.jpg',
-	playerEsp: '/images/blog-image-6.jpg',
-	rebootFight: '/images/blog-image-7.webp',
-	battleRoyaleCombat: '/images/blog-image-8.webp',
-	battleRoyaleIslandMap: '/images/blog-image-9.webp',
+	hero: HERO,
+	espWallhack: HERO,
+	aimbotCombat: HERO,
+	aimbotSkeleton: HERO,
+	squadFight: HERO,
+	headerArt: HERO,
+	cheatsPackage: HERO,
+	playerEsp: HERO,
+	rebootFight: HERO,
+	battleRoyaleCombat: HERO,
+	battleRoyaleIslandMap: HERO,
 };
 
 const FALLBACK_BLOG_IMAGE = tarkovImages.espWallhack;

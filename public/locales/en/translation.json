@@ -20,19 +20,19 @@
                 "closeMenu":  "Close menu"
             },
     "hero":  {
-                 "accent":  "2026 — Undetected ESP, Aimbot \u0026 Wallhack",
-                 "accentShort":  "Undetected Battlefield 6 cheats 2026",
-                 "subtitle":  "Undetected ESP, soft aim, and radar for Battlefield 6 on Windows PC.",
-                 "subtitleShort":  "Battlefield 6 esp, radar \u0026 aimbot for PC",
-                 "buyNow":  "Get Access",
-                 "seeFeatures":  "See Features",
-                 "title":  "Battlefield 6 Cheats",
-                 "priceFrom":  "from",
-                 "imageAlt":  "{{brand}} — Battlefield 6 ESP and aimbot overlay",
-                 "chipEsp":  "ESP / wallhack",
-                 "chipAim":  "Soft aim",
-                 "chipRadar":  "2D radar",
-                 "chipUpdates":  "Patch updates"
+                "accent":  "Undetected ESP, Aimbot & Cloud-DMA",
+                "accentShort":  "Undetected Battlefield 6 cheats",
+                "subtitle":  "Undetected ESP, aimbot, and DMA options for Battlefield 6 on Windows PC.",
+                "subtitleShort":  "Battlefield 6 ESP, Cloud-DMA and aimbot for PC",
+                "buyNow":  "Get Access",
+                "seeFeatures":  "See Features",
+                "title":  "Battlefield 6 Cheats",
+                "priceFrom":  "from",
+                "imageAlt":  "{{brand}} — Battlefield 6 ESP and aimbot overlay",
+                "chipEsp":  "ESP / boxes",
+                "chipAim":  "Aimbot",
+                "chipRadar":  "Cloud-DMA",
+                "chipUpdates":  "Patch updates"
              },
     "cta":  {
                 "buy":  "Get Access",
@@ -119,8 +119,8 @@
                    "tagline":  "Undetected Battlefield 6 cheats for PC.\nESP, wallhack, radar \u0026 aimbot."
                },
     "home":  {
-                 "aboutTitle":  "undetected cheats for Battlefield 6",
-                 "aboutP1":  "Our Battlefield 6 cheats are an undetected package for Battlefield 6 on Windows PC. Watch the setup preview, then use ESP, soft aim, and radar in one license.",
+                 "aboutTitle":  "Undetected cheats for Battlefield 6",
+                 "aboutP1":  "Our Battlefield 6 cheats are an undetected package for Battlefield 6 on Windows PC. Use ESP, aimbot, and Cloud-DMA in one license.",
                  "aboutP2Before":  "See the",
                  "aboutPillar":  "Features list",
                  "aboutEsp":  "ESP guide",
@@ -146,7 +146,7 @@
                     "linkAllFeatures":  "All features",
                     "linkEsp":  "ESP",
                     "linkAimbot":  "Aimbot",
-                    "linkRadar":  "Radar",
+                    "linkRadar":  "Cloud-DMA",
                     "linkLiveStatus":  "Live status",
                     "linkUndetected":  "Undetected",
                     "linkBattlEye":  "EA Javelin",
@@ -208,7 +208,7 @@
                  "blogTitle":  "Battlefield 6 Cheats Blog | ESP, Cheats \u0026 Meta Tips",
                  "blogDescription":  "Battlefield 6 cheats and Battlefield 6 cheats guides — ESP, aimbot, ranked meta, loot routes, and EA Javelin updates. Global English blog at Battlefield 6cheats.org/blog/.",
                  "blogH1":  "Battlefield 6 Cheats Intel",
-                 "blogIntro":  "Actionable Battlefield 6 guides for match and vehicle-run — meta breakdowns, loot routes, weapon tiers, and pro warmup routines. Pair these tips with our Battlefield 6 cheats pages for ESP boxes, soft aim, and cloud DMA when you need in-match tools.",
+                 "blogIntro":  "Short Battlefield 6 guides for ESP, aimbot, and DMA. Pair these tips with the Battlefield 6 Cheats product pages when you need tools in a match.",
                  "readMore":  "Read guide",
                  "published":  "Published",
                  "updated":  "Updated",
@@ -228,7 +228,7 @@
                    "highlightRadarTitle":  "Battlefield 6 cheats DMA",
                    "highlightRadarCopy":  "Track nearby threats with Battlefield 6 DMA before you push an objective.",
                     "highlightAimbotTitle":  "Battlefield 6 cheats aimbot",
-                    "highlightAimbotCopy":  "Use soft aim and aimbot controls tuned for Battlefield 6 matches on Windows PC.",
+                    "highlightAimbotCopy":  "Use aimbot controls tuned for Battlefield 6 matches on Windows PC.",
                     "updatesLabel":  "Battlefield 6 cheats updates",
                     "updatesShort":  "Updates"
                 }

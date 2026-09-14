@@ -12,33 +12,35 @@ export const PAGE_IDS = [
 	'aimbot-hack', 'esp-hack', 'unlock-all', 'privacy', 'refund', 'terms',
 ];
 
-/** Hero image per page — simple battlefield 6 cheats keyword filenames. */
+const LIVE_HERO = '/images/hero-banner-new-2.png';
+
+/** Hero image per page — only files that exist in /public/images. */
 export const HERO_IMAGES = {
-	home: '/images/battlefield-6-cheats-esp.webp',
-	'bf6-esp': '/images/battlefield-6-cheats-radar.webp',
-	'bf6-aimbot': '/images/battlefield-6-cheats-aimbot.webp',
-	features: '/images/battlefield-6-cheats-aimbot-view.webp',
-	pricing: '/images/battlefield-6-cheats-match.webp',
-	setup: '/images/battlefield-6-cheats-radar.webp',
-	updates: '/images/battlefield-6-cheats-esp.webp',
-	faq: '/images/battlefield-6-cheats-aimbot-view.webp',
-	support: '/images/battlefield-6-cheats-match.webp',
-	undetected: '/images/battlefield-6-cheats-wallhack.webp',
-	wallhack: '/images/battlefield-6-cheats-wallhack.webp',
-	radar: '/images/battlefield-6-cheats-radar.webp',
-	javelin: '/images/battlefield-6-cheats-aimbot.webp',
-	'cheats-2026': '/images/battlefield-6-cheats-esp.webp',
-	hacks: '/images/battlefield-6-cheats-match.webp',
-	'cheat-download': '/images/battlefield-6-cheats-match.webp',
-	'mod-menu': '/images/battlefield-6-cheats-radar.webp',
-	'soft-aim': '/images/battlefield-6-cheats-aimbot-view.webp',
-	'best-cheats': '/images/battlefield-6-cheats-esp.webp',
-	'aimbot-hack': '/images/battlefield-6-cheats-aimbot-view.webp',
-	'esp-hack': '/images/battlefield-6-cheats-wallhack.webp',
-	'unlock-all': '/images/battlefield-6-cheats-radar.webp',
-	privacy: '/images/battlefield-6-cheats-aimbot.webp',
-	refund: '/images/battlefield-6-cheats-match.webp',
-	terms: '/images/battlefield-6-cheats-aimbot-view.webp',
+	home: LIVE_HERO,
+	'bf6-esp': LIVE_HERO,
+	'bf6-aimbot': LIVE_HERO,
+	features: LIVE_HERO,
+	pricing: LIVE_HERO,
+	setup: LIVE_HERO,
+	updates: LIVE_HERO,
+	faq: LIVE_HERO,
+	support: LIVE_HERO,
+	undetected: LIVE_HERO,
+	wallhack: LIVE_HERO,
+	radar: LIVE_HERO,
+	javelin: LIVE_HERO,
+	'cheats-2026': LIVE_HERO,
+	hacks: LIVE_HERO,
+	'cheat-download': LIVE_HERO,
+	'mod-menu': LIVE_HERO,
+	'soft-aim': LIVE_HERO,
+	'best-cheats': LIVE_HERO,
+	'aimbot-hack': LIVE_HERO,
+	'esp-hack': LIVE_HERO,
+	'unlock-all': LIVE_HERO,
+	privacy: LIVE_HERO,
+	refund: LIVE_HERO,
+	terms: LIVE_HERO,
 };
 
 export const TS_HEADER = `import type { LocaleCode } from './locales';
@@ -121,14 +123,18 @@ export function section(h2, ...args) {
 	return sec;
 }
 
+const BF6_OFFICIAL =
+	'<a href="https://www.ea.com/games/battlefield/battlefield-6" target="_blank" rel="noopener noreferrer">Battlefield 6</a>';
+const BF6_SUPPORT =
+	'<a href="https://help.ea.com/" target="_blank" rel="noopener noreferrer">EA Help</a>';
+const JAVELIN =
+	'<a href="https://www.ea.com/games/battlefield/battlefield-6" target="_blank" rel="noopener noreferrer">EA Javelin</a>';
+
 /** Authoritative external citation helpers (open in new tab). */
 export const EXT = {
-	activision:
-		'<a href="https://www.escapefromtarkov.com/" target="_blank" rel="noopener noreferrer">Battlefield 6</a>',
-	'battlefield-6':
-		'<a href="https://www.escapefromtarkov.com/" target="_blank" rel="noopener noreferrer">Battlefield 6</a>',
-	status:
-		'<a href="https://www.escapefromtarkov.com/support" target="_blank" rel="noopener noreferrer">Battlefield 6 Support</a>',
-	javelin:
-		'<a href="https://www.battleye.com/" target="_blank" rel="noopener noreferrer">EA Javelin Anti-Cheat</a>',
+	activision: BF6_OFFICIAL,
+	'battlefield-6': BF6_OFFICIAL,
+	status: BF6_SUPPORT,
+	javelin: JAVELIN,
+	battleye: JAVELIN,
 };
