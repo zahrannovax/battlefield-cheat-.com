@@ -86,53 +86,46 @@ function isActive(href: string) {
 				>
 					<span>{ctaLabel}</span>
 				</a>
-				<button
-					type="button"
-					class="site-menu"
-					data-nav-toggle
-					aria-expanded="false"
-					aria-controls="site-nav-panel"
-					aria-label={t('nav.openMenu')}
-					data-close-label={t('nav.closeMenu')}
-				>
-					<span class="site-menu__bars" aria-hidden="true">
-						<span></span>
-						<span></span>
-						<span></span>
-					</span>
-				</button>
-			</div>
-		</div>
-
-		<div class="site-nav-backdrop" data-nav-backdrop hidden></div>
-
-		<div class="site-panel" id="site-nav-panel" data-nav-panel hidden>
-			<nav class="site-panel__nav" aria-label={t('nav.mobileAria')}>
-				{
-					links.map((item) => (
-						<a
-							href={item.href}
-							class:list={[{ 'is-active': isActive(item.href) }]}
-							aria-current={isActive(item.href) ? 'page' : undefined}
-						>
-							<span data-edit={item.edit}>{item.label}</span>
-						</a>
-					))
-				}
-			</nav>
-			<div class="site-panel__foot">
-				<div class="site-panel__lang">
-					<LanguageSwitcher currentLocale={locale} pageId={pageId} />
-				</div>
-				<a
-					class="site-cta-pill site-cta-pill--block"
-					href={ctaHref}
-					rel="noopener noreferrer"
-					target="_blank"
-					aria-label={ctaLabel}
-				>
-					<span>{ctaLabel}</span>
-				</a>
+				<details class="site-mobile">
+					<summary class="site-menu" aria-label={t('nav.openMenu')}>
+						<span class="site-menu__hit" aria-hidden="true">
+							<span class="site-menu__bars">
+								<span></span>
+								<span></span>
+								<span></span>
+							</span>
+						</span>
+					</summary>
+					<div class="site-panel" id="site-nav-panel">
+						<nav class="site-panel__nav" aria-label={t('nav.mobileAria')}>
+							{
+								links.map((item) => (
+									<a
+										href={item.href}
+										class:list={[{ 'is-active': isActive(item.href) }]}
+										aria-current={isActive(item.href) ? 'page' : undefined}
+									>
+										<span data-edit={item.edit}>{item.label}</span>
+									</a>
+								))
+							}
+						</nav>
+						<div class="site-panel__foot">
+							<div class="site-panel__lang">
+								<LanguageSwitcher currentLocale={locale} pageId={pageId} />
+							</div>
+							<a
+								class="site-cta-pill site-cta-pill--block"
+								href={ctaHref}
+								rel="noopener noreferrer"
+								target="_blank"
+								aria-label={ctaLabel}
+							>
+								<span>{ctaLabel}</span>
+							</a>
+						</div>
+					</div>
+				</details>
 			</div>
 		</div>
 	</div>
@@ -193,7 +186,7 @@ function isActive(href: string) {
 	}
 
 	.site-header.is-scrolled .site-header__pill,
-	.site-header.is-open .site-header__pill {
+	.site-header:has(.site-mobile[open]) .site-header__pill {
 		background: rgba(0, 0, 0, 0.78);
 		border-color: rgba(255, 255, 255, 0.16);
 		box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
@@ -274,7 +267,7 @@ function isActive(href: string) {
 		flex-shrink: 0;
 	}
 
-	.site-header__pill .site-cta-pill {
+	.site-tools > .site-cta-pill {
 		display: none;
 	}
 
@@ -324,14 +317,24 @@ function isActive(href: string) {
 		white-space: nowrap;
 	}
 
+	.site-mobile {
+		position: static;
+	}
+
+	.site-mobile[open]::before {
+		content: '';
+		position: fixed;
+		inset: 0;
+		z-index: 0;
+		background: rgba(0, 0, 0, 0.48);
+	}
+
 	.site-menu {
-		position: relative;
-		z-index: 3;
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
+		display: block;
+		box-sizing: border-box;
 		width: var(--touch-min, 2.75rem);
 		height: var(--touch-min, 2.75rem);
+		margin: 0;
 		padding: 0;
 		border: 1px solid rgba(255, 255, 255, 0.16);
 		border-radius: 999px;
@@ -339,15 +342,27 @@ function isActive(href: string) {
 		color: #fff;
 		flex-shrink: 0;
 		cursor: pointer;
-		pointer-events: auto;
+		list-style: none;
+		position: relative;
+		z-index: 3;
 		-webkit-user-select: none;
 		user-select: none;
+		-webkit-tap-highlight-color: transparent;
 	}
 
-	.site-menu::before {
+	.site-menu::-webkit-details-marker,
+	.site-menu::marker {
+		display: none;
 		content: '';
-		position: absolute;
-		inset: -0.35rem;
+	}
+
+	.site-menu__hit {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
 	}
 
 	.site-menu__bars {
@@ -367,38 +382,25 @@ function isActive(href: string) {
 		transform-origin: center;
 	}
 
-	.site-header.is-open .site-menu__bars span:nth-child(1) {
+	.site-mobile[open] .site-menu__bars span:nth-child(1) {
 		transform: translateY(5px) rotate(45deg);
 	}
 
-	.site-header.is-open .site-menu__bars span:nth-child(2) {
+	.site-mobile[open] .site-menu__bars span:nth-child(2) {
 		opacity: 0;
 	}
 
-	.site-header.is-open .site-menu__bars span:nth-child(3) {
+	.site-mobile[open] .site-menu__bars span:nth-child(3) {
 		transform: translateY(-5px) rotate(-45deg);
 	}
 
-	.site-nav-backdrop {
-		position: fixed;
-		inset: 0;
-		z-index: 0;
-		background: rgba(0, 0, 0, 0.48);
-		border: 0;
-		padding: 0;
-		cursor: pointer;
-	}
-
-	.site-nav-backdrop[hidden],
-	.site-panel[hidden] {
-		display: none;
-	}
-
 	.site-panel {
-		position: relative;
-		z-index: 1;
-		width: min(100%, 68rem);
-		margin-top: 0.55rem;
+		position: absolute;
+		z-index: 2;
+		left: 0;
+		right: 0;
+		top: calc(100% + 0.55rem);
+		width: auto;
 		padding: 0.85rem 0.75rem 0.9rem;
 		border-radius: 1.35rem;
 		background: rgba(0, 0, 0, 0.92);
@@ -453,13 +455,11 @@ function isActive(href: string) {
 			display: flex;
 		}
 
-		.site-menu,
-		.site-panel,
-		.site-nav-backdrop {
+		.site-mobile {
 			display: none;
 		}
 
-		.site-header__pill .site-cta-pill {
+		.site-tools > .site-cta-pill {
 			display: inline-flex;
 			width: auto;
 			min-width: 0;
@@ -484,7 +484,7 @@ function isActive(href: string) {
 		}
 
 		.site-menu {
-			display: inline-flex;
+			display: block;
 		}
 
 		.site-header__pill {
@@ -635,46 +635,7 @@ function isActive(href: string) {
 		if (header.dataset.navReady === '1') return;
 		header.dataset.navReady = '1';
 
-		const toggle = header.querySelector<HTMLButtonElement>('[data-nav-toggle]');
-		const panel = header.querySelector<HTMLElement>('[data-nav-panel]');
-		const backdrop = header.querySelector<HTMLElement>('[data-nav-backdrop]');
-		if (!toggle || !panel) return;
-
-		const openLabel = toggle.getAttribute('aria-label') || 'Open menu';
-		const closeLabel = toggle.getAttribute('data-close-label') || 'Close menu';
-		const desktopMq = window.matchMedia('(min-width: 1025px)');
-
-		const setOpen = (open: boolean) => {
-			const next = open && !desktopMq.matches;
-			header.classList.toggle('is-open', next);
-			toggle.setAttribute('aria-expanded', String(next));
-			toggle.setAttribute('aria-label', next ? closeLabel : openLabel);
-			panel.hidden = !next;
-			if (backdrop) backdrop.hidden = !next;
-			document.body.classList.toggle('nav-lock', next);
-		};
-
-		toggle.addEventListener('click', (event) => {
-			event.preventDefault();
-			event.stopPropagation();
-			setOpen(!header.classList.contains('is-open'));
-		});
-
-		backdrop?.addEventListener('click', () => setOpen(false));
-
-		panel.querySelectorAll('a').forEach((link) => {
-			link.addEventListener('click', () => {
-				const href = link.getAttribute('href');
-				if (!href) {
-					setOpen(false);
-					return;
-				}
-				const next = new URL(href, window.location.href);
-				if (next.origin === window.location.origin && next.pathname === window.location.pathname) {
-					setOpen(false);
-				}
-			});
-		});
+		const mobile = header.querySelector<HTMLDetailsElement>('.site-mobile');
 
 		const onScroll = () => {
 			header.classList.toggle('is-scrolled', window.scrollY > 8);
@@ -683,12 +644,24 @@ function isActive(href: string) {
 		onScroll();
 		window.addEventListener('scroll', onScroll, { passive: true });
 
+		if (!mobile) return;
+
+		const syncOpen = () => {
+			document.body.classList.toggle('nav-lock', mobile.open);
+		};
+
+		syncOpen();
+		mobile.addEventListener('toggle', syncOpen);
+
 		document.addEventListener('keydown', (event) => {
-			if (event.key === 'Escape') setOpen(false);
+			if (event.key === 'Escape' && mobile.open) {
+				mobile.open = false;
+			}
 		});
 
+		const desktopMq = window.matchMedia('(min-width: 1025px)');
 		desktopMq.addEventListener('change', () => {
-			if (desktopMq.matches) setOpen(false);
+			if (desktopMq.matches) mobile.open = false;
 		});
 	}
 
