@@ -5,6 +5,7 @@ type Props = {
 	locale: string;
 	siteName: string;
 	checkoutUrl: string;
+	checkoutDisabled?: boolean;
 	monthlyPrice: number;
 	heroSrc: string;
 	heroSrcSet: string;
@@ -69,6 +70,7 @@ function ChipIcon({ icon }: { icon: string }) {
 function HeroInner({
 	siteName,
 	checkoutUrl,
+	checkoutDisabled = false,
 	monthlyPrice,
 	heroSrc,
 	heroSrcSet,
@@ -110,7 +112,14 @@ function HeroInner({
 						{subtitle}
 					</p>
 					<div className="hero__actions">
-						<a className="hero__buy" href={checkoutUrl} rel="noopener noreferrer">
+						<a
+							className="hero__buy"
+							href={checkoutDisabled ? '#' : checkoutUrl}
+							rel={checkoutDisabled ? undefined : 'noopener noreferrer'}
+							aria-disabled={checkoutDisabled ? true : undefined}
+							tabIndex={checkoutDisabled ? -1 : undefined}
+							onClick={checkoutDisabled ? (event) => event.preventDefault() : undefined}
+						>
 							<span className="hero__buy-label" data-edit={useBrandHero ? 'ctaBuy' : undefined}>
 								{ctaBuy}
 							</span>

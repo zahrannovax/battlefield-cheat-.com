@@ -3,7 +3,8 @@ import PageLayout from '../layouts/PageLayout.astro';
 import { getPageContent, getUi, type PageId } from '../data/i18n';
 import { getLocalizedPath, localizeInternalHref } from '../data/i18n/routing';
 import type { LocaleCode } from '../data/i18n/locales';
-import { productInfo, seoFaqs, siteConfig, customerReviewStats } from '../data/site';
+import { buyHref, offerPageUrl, productInfo, seoFaqs, siteConfig, customerReviewStats } from '../data/site';
+import BuyLink from './BuyLink.astro';
 import { absoluteFaqUrl, getFaqPath } from '../data/faq';
 import { tarkovImages } from '../data/battlefield-6';
 import { simplePageCopy } from '../data/i18n/simple-pages';
@@ -24,7 +25,7 @@ const simple = locale === 'en' ? simplePageCopy[pageId] : undefined;
 
 function localizeParagraphHtml(html: string): string {
 	return html
-		.replace(/\{checkout\}/g, siteConfig.checkoutUrl)
+		.replace(/\{checkout\}/g, buyHref)
 		.replace(/href="(\/[^"]+)"/g, (_, path: string) => `href="${localizeInternalHref(path, locale)}"`);
 }
 
@@ -99,7 +100,7 @@ const storeSchema =
 					priceCurrency: productInfo.currency,
 					offerCount: productInfo.plans.length,
 					availability: 'https://schema.org/InStock',
-					url: siteConfig.checkoutUrl,
+					url: offerPageUrl,
 					offers: productInfo.plans.map((plan) => ({
 						'@type': 'Offer',
 						name: `${productInfo.name} ${plan.label}`,
@@ -107,7 +108,7 @@ const storeSchema =
 						priceCurrency: productInfo.currency,
 						priceValidUntil,
 						availability: 'https://schema.org/InStock',
-						url: siteConfig.checkoutUrl,
+						url: offerPageUrl,
 						seller: { '@id': `${siteConfig.url}/#organization` },
 					})),
 				},
@@ -118,9 +119,7 @@ const extraGraph = [faqSchema, storeSchema].filter(Boolean) as Record<string, un
 
 const ctaSecondaryHref = ctaSecondaryPath
 	? localizeInternalHref(ctaSecondaryPath, locale)
-	: ctaSecondaryLabel
-		? siteConfig.checkoutUrl
-		: getLocalizedPath('features', locale);
+	: getLocalizedPath('features', locale);
 
 const monthly = productInfo.plans.find((p) => p.id === 'monthly') ?? productInfo.plans[0];
 const lifetime = productInfo.plans.find((p) => p.id === 'lifetime') ?? productInfo.plans[1];
@@ -154,7 +153,7 @@ const eyebrowByPage: Partial<Record<PageId, string>> = {
 	locale={locale}
 	pageId={pageId}
 	extraGraph={extraGraph}
-	ctaPrimary={{ href: siteConfig.checkoutUrl, label: ctaPrimaryLabel, edit: 'ctaBuy' }}
+	ctaPrimary={{ href: buyHref, label: ctaPrimaryLabel, edit: 'ctaBuy' }}
 	ctaSecondary={
 		ctaSecondaryLabel
 			? { href: ctaSecondaryHref, label: ctaSecondaryLabel }
@@ -168,16 +167,16 @@ const eyebrowByPage: Partial<Record<PageId, string>> = {
 			<section class="card-panel">
 				<h2>{t('product.plans')}</h2>
 				<div class="price-grid">
-					<a class="price-card" href={siteConfig.checkoutUrl} rel="noopener noreferrer">
+					<BuyLink class="price-card">
 						<span class="price-card__label">{t('product.monthly')}</span>
 						<span class="price-card__price">${monthly.price}</span>
 						<span class="price-card__meta">{t('product.days30')}</span>
-					</a>
-					<a class="price-card is-featured" href={siteConfig.checkoutUrl} rel="noopener noreferrer">
+					</BuyLink>
+					<BuyLink class="price-card is-featured">
 						<span class="price-card__label">{t('product.lifetime')}</span>
 						<span class="price-card__price">${lifetime.price}</span>
 						<span class="price-card__meta">{t('product.oneTime')}</span>
-					</a>
+					</BuyLink>
 				</div>
 			</section>
 		)

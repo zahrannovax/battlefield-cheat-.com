@@ -3,6 +3,7 @@ import Layout from '../../../layouts/Layout.astro';
 import Navbar from '../../../components/Navbar.astro';
 import SiteFooter from '../../../components/SiteFooter.astro';
 import { productInfo, seoFaqs, siteConfig, type FaqItem } from '../../../data/site';
+import BuyLink from '../../../components/BuyLink.astro';
 import { absoluteFaqUrl, faqBasePath, getFaqCrawlImage, getFaqPath, getRelatedFaqs } from '../../../data/faq';
 import { getSelfHreflangAlternates } from '../../../data/i18n/routing';
 import { contentSrcSet, productMainSizes } from '../../../lib/responsive-images';
@@ -97,9 +98,9 @@ const extraGraph: Record<string, unknown>[] = [
 				</div>
 
 				<div class="faq-detail__ctas">
-					<a href={siteConfig.checkoutUrl} class="faq-detail__buy" rel="noopener noreferrer">
+					<BuyLink class="faq-detail__buy">
 						Buy {siteConfig.name} — ${productInfo.plans[0].price}
-					</a>
+					</BuyLink>
 					<a href="/pricing/" class="faq-detail__link">Compare pricing</a>
 					<a href="/support/" class="faq-detail__link">Contact support</a>
 				</div>

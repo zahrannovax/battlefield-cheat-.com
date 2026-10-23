@@ -75,6 +75,7 @@ const pageId = pageIdProp ?? resolvePageId(canonicalPath);
 const ui = getUi(locale);
 const homeHref = getLocalizedPath('home', locale);
 const resolvedEyebrow = eyebrow ?? ui.product.title;
+const primaryCtaDead = Boolean(ctaPrimary && (!ctaPrimary.href || ctaPrimary.href === '#'));
 
 const normalizedGallery = gallery
 	.map((item) => {
@@ -164,8 +165,10 @@ const useHomeHero =
 								{ctaPrimary && (
 									<a
 										class="btn-buy"
-										href={ctaPrimary.href}
-										rel={ctaPrimary.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+										href={primaryCtaDead ? '#' : ctaPrimary.href}
+										rel={!primaryCtaDead && ctaPrimary.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+										aria-disabled={primaryCtaDead ? 'true' : undefined}
+										tabindex={primaryCtaDead ? -1 : undefined}
 									>
 										<span data-edit={ctaPrimary.edit || undefined}>{ctaPrimary.label}</span>
 									</a>

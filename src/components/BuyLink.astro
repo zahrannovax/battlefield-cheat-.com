@@ -1,0 +1,24 @@
+---
+import { buyHref, checkoutIsLive } from '../data/checkout';
+
+interface Props {
+	class?: string;
+	ariaLabel?: string;
+	newTab?: boolean;
+}
+
+const { class: className, ariaLabel, newTab = false } = Astro.props;
+const live = checkoutIsLive;
+---
+
+<a
+	class={className}
+	href={buyHref}
+	aria-label={ariaLabel}
+	aria-disabled={live ? undefined : 'true'}
+	tabindex={live ? undefined : -1}
+	rel={live ? 'noopener noreferrer' : undefined}
+	target={live && newTab ? '_blank' : undefined}
+>
+	<slot />
+</a>

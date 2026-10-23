@@ -11,6 +11,8 @@ export {
 	productInfo,
 } from './site-core';
 
+export { buyHref, checkoutIsLive, offerPageUrl } from './checkout';
+
 import { fillBrandTokens } from './brand';
 
 function faq<T extends { question: string; answer: string; seoTitle: string; seoDescription: string }>(item: T): T {

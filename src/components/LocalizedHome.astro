@@ -10,7 +10,7 @@ import SiteFooter from '../components/SiteFooter.astro';
 import { getLocaleContent, getPageContent } from '../data/i18n';
 import { getLocalizedPath } from '../data/i18n/routing';
 import type { LocaleCode } from '../data/i18n/locales';
-import { homeFaqs, homeSeo, productInfo, siteConfig, customerReviewStats } from '../data/site';
+import { homeFaqs, homeSeo, offerPageUrl, productInfo, siteConfig, customerReviewStats } from '../data/site';
 import { heroPreloadSrc, heroSizes, heroSrcSet } from '../lib/responsive-images';
 import { defaultCrawlImageSrc } from '../data/page-images';
 
@@ -56,7 +56,7 @@ const extraGraph: Record<string, unknown>[] = [
 			priceCurrency: productInfo.currency,
 			offerCount: productInfo.plans.length,
 			availability: 'https://schema.org/InStock',
-			url: siteConfig.checkoutUrl,
+			url: offerPageUrl,
 			offers: productInfo.plans.map((plan) => ({
 				'@type': 'Offer',
 				name: `${productInfo.name} ${plan.label}`,
@@ -64,7 +64,7 @@ const extraGraph: Record<string, unknown>[] = [
 				priceCurrency: productInfo.currency,
 				priceValidUntil,
 				availability: 'https://schema.org/InStock',
-				url: siteConfig.checkoutUrl,
+				url: offerPageUrl,
 				seller: { '@id': `${siteConfig.url}/#organization` },
 			})),
 		},

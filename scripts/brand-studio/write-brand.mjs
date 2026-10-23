@@ -353,7 +353,8 @@ export function validateBrandPayload(body) {
 	const shortName = str(b.shortName ?? b.name, 80);
 	const siteUrl = url(b.url);
 	const supportEmail = email(b.supportEmail);
-	const checkoutUrl = url(b.checkoutUrl);
+	const checkoutRaw = typeof b.checkoutUrl === 'string' ? b.checkoutUrl.trim() : '';
+	const checkoutUrl = checkoutRaw ? url(checkoutRaw) : '';
 	const game = str(b.game, 80);
 	const antiCheat = str(b.antiCheat, 80);
 	const primary = str(b.primaryKeyword ?? b.primary, 80);
@@ -387,7 +388,7 @@ export function validateBrandPayload(body) {
 	if (!shortName) return { ok: false, error: 'Short name required' };
 	if (!siteUrl) return { ok: false, error: 'Valid https URL required' };
 	if (!supportEmail) return { ok: false, error: 'Valid support email required' };
-	if (!checkoutUrl) return { ok: false, error: 'Valid checkout URL required' };
+	if (checkoutRaw && !checkoutUrl) return { ok: false, error: 'Checkout URL must be http(s) or empty' };
 	if (!game) return { ok: false, error: 'Game required' };
 	if (!antiCheat) return { ok: false, error: 'Anti-cheat required' };
 	if (!primary) return { ok: false, error: 'Primary keyword required' };

@@ -1,8 +1,9 @@
 ---
 import { getLocalizedPath } from '../data/i18n/routing';
 import { defaultLocale, type LocaleCode } from '../data/i18n/locales';
-import { productInfo, siteConfig } from '../data/site';
+import { productInfo } from '../data/site';
 import { getT } from '../i18n/server';
+import BuyLink from './BuyLink.astro';
 
 interface Props {
 	locale?: LocaleCode;
@@ -41,9 +42,9 @@ const included = [
 				<ul class="plan__list">
 					{included.map((item) => <li>{item}</li>)}
 				</ul>
-				<a class="plan__cta plan__cta--solid" href={siteConfig.checkoutUrl} rel="noopener noreferrer">
+				<BuyLink class="plan__cta plan__cta--solid">
 					{t('product.buyMonthly')}
-				</a>
+				</BuyLink>
 			</article>
 
 			<article class="plan">
@@ -55,9 +56,9 @@ const included = [
 				<ul class="plan__list">
 					{included.map((item) => <li>{item}</li>)}
 				</ul>
-				<a class="plan__cta" href={siteConfig.checkoutUrl} rel="noopener noreferrer">
+				<BuyLink class="plan__cta">
 					{t('product.buyLifetime')}
-				</a>
+				</BuyLink>
 			</article>
 		</div>
 	</div>

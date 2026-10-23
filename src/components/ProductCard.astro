@@ -2,9 +2,10 @@
 import { tarkovImages } from '../data/battlefield-6';
 import { getUi } from '../data/i18n';
 import { defaultLocale, type LocaleCode } from '../data/i18n/locales';
-import { productInfo, siteConfig } from '../data/site';
+import { productInfo } from '../data/site';
 import { contentSrcSet, productMainSizes } from '../lib/responsive-images';
 import { getT } from '../i18n/server';
+import BuyLink from './BuyLink.astro';
 
 interface Props {
 	name?: string;
@@ -53,13 +54,9 @@ const monthlyPlan = productInfo.plans.find((plan) => plan.id === 'monthly') ?? p
 			${monthlyPlan.price}
 			<span>{ui.product.monthly}</span>
 		</p>
-		<a
-			href={siteConfig.checkoutUrl}
-			class="btn-buy product__buy"
-			rel="noopener noreferrer"
-		>
+		<BuyLink class="btn-buy product__buy">
 			{ui.common.buyNow} — ${monthlyPlan.price}
-		</a>
+		</BuyLink>
 	</div>
 </section>
 

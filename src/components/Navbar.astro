@@ -9,6 +9,7 @@ import { defaultLocale, type LocaleCode } from '../data/i18n/locales';
 import { reviewsBasePath } from '../data/reviews';
 import { siteConfig } from '../data/site';
 import { getT } from '../i18n/server';
+import BuyLink from './BuyLink.astro';
 
 interface Props {
 	locale?: LocaleCode;
@@ -22,7 +23,6 @@ const current = Astro.url.pathname;
 const homeHref = getLocalizedPath('home', locale);
 const t = getT(locale);
 const overlay = pageId === 'home';
-const ctaHref = siteConfig.checkoutUrl;
 const ctaLabel = t('nav.buyNow');
 
 const links = [
@@ -77,15 +77,9 @@ function isActive(href: string) {
 				<div class="site-tools__lang">
 					<LanguageSwitcher currentLocale={locale} pageId={pageId} />
 				</div>
-				<a
-					class="site-cta-pill"
-					href={ctaHref}
-					rel="noopener noreferrer"
-					target="_blank"
-					aria-label={ctaLabel}
-				>
+				<BuyLink class="site-cta-pill" ariaLabel={ctaLabel} newTab>
 					<span>{ctaLabel}</span>
-				</a>
+				</BuyLink>
 				<details class="site-mobile">
 					<summary class="site-menu" aria-label={t('nav.openMenu')}>
 						<span class="site-menu__hit" aria-hidden="true">
@@ -114,15 +108,9 @@ function isActive(href: string) {
 							<div class="site-panel__lang">
 								<LanguageSwitcher currentLocale={locale} pageId={pageId} />
 							</div>
-							<a
-								class="site-cta-pill site-cta-pill--block"
-								href={ctaHref}
-								rel="noopener noreferrer"
-								target="_blank"
-								aria-label={ctaLabel}
-							>
+							<BuyLink class="site-cta-pill site-cta-pill--block" ariaLabel={ctaLabel} newTab>
 								<span>{ctaLabel}</span>
-							</a>
+							</BuyLink>
 						</div>
 					</div>
 				</details>

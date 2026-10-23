@@ -15,7 +15,8 @@ export const brand = {
 	supportEmail: '',
 	/** Discord invite link — used in place of support email */
 	discordUrl: 'https://discord.gg/t6n2cUNkPT',
-	checkoutUrl: 'https://zadeyo.com/go/ZAHRAN?to=%2Fproducts%2FBF6',
+	/** Empty = buy buttons are disabled (no affiliate / checkout hop). */
+	checkoutUrl: '',
 
 	/** Game this template instance targets */
 	game: 'Battlefield 6',
@@ -175,7 +176,7 @@ export function fillBrandTokens(input: string): string {
 		.replaceAll('{email}', brand.discordUrl)
 		.replaceAll('{discord}', brand.discordUrl)
 		.replaceAll('{primaryKeyword}', brand.keywords.primary)
-		.replaceAll('{checkout}', brand.checkoutUrl);
+		.replaceAll('{checkout}', brand.checkoutUrl.trim() || '#');
 }
 
 /** Locked title formula fallback: `{Game} {Topic} | {Brand}` */
