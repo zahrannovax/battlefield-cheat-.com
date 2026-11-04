@@ -15,8 +15,7 @@ export const brand = {
 	supportEmail: '',
 	/** Discord invite link — used in place of support email */
 	discordUrl: 'https://discord.gg/t6n2cUNkPT',
-	/** Empty = buy buttons are disabled (no affiliate / checkout hop). */
-	checkoutUrl: '',
+	checkoutUrl: 'https://zadeyo.com/go/MOIZ?to=%2Fproducts%2Fbf6',
 
 	/** Game this template instance targets */
 	game: 'Battlefield 6',
