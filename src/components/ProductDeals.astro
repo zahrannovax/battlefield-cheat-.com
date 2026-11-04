@@ -185,7 +185,7 @@ const included = [
 		background: var(--magenta-soft);
 	}
 
-	.plan__cta {
+	:global(.plan__cta) {
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
@@ -199,18 +199,18 @@ const included = [
 		color: var(--ink);
 	}
 
-	.plan__cta:hover {
+	:global(.plan__cta:hover) {
 		border-color: var(--magenta);
 		background: color-mix(in srgb, var(--magenta) 8%, transparent);
 	}
 
-	.plan__cta--solid {
+	:global(.plan__cta--solid) {
 		border-color: transparent;
 		background: #fff;
 		color: #09090b;
 	}
 
-	.plan__cta--solid:hover {
+	:global(.plan__cta--solid:hover) {
 		background: #e4e4e7;
 		border-color: transparent;
 		color: #09090b;

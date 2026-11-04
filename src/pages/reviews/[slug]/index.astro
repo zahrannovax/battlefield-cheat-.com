@@ -322,7 +322,7 @@ const extraGraph: Record<string, unknown>[] = [
 		gap: 0.65rem;
 	}
 
-	.review-detail__buy {
+	:global(.review-detail__buy) {
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
@@ -338,7 +338,7 @@ const extraGraph: Record<string, unknown>[] = [
 			background 0.2s ease;
 	}
 
-	.review-detail__buy:hover {
+	:global(.review-detail__buy:hover) {
 		transform: translateY(-1px);
 		background: var(--accent-hover);
 		color: #fff;
@@ -458,7 +458,7 @@ const extraGraph: Record<string, unknown>[] = [
 			flex-direction: column;
 		}
 
-		.review-detail__buy,
+		:global(.review-detail__buy),
 		.review-detail__link-btn {
 			width: 100%;
 			min-height: var(--touch-min, 2.75rem);

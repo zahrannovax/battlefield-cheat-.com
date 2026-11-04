@@ -387,7 +387,7 @@ const extraGraph: Record<string, unknown>[] = [
 		margin-top: 0.35rem;
 	}
 
-	.reviews-index__buy {
+	:global(.reviews-index__buy) {
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
@@ -403,7 +403,7 @@ const extraGraph: Record<string, unknown>[] = [
 			background 0.2s ease;
 	}
 
-	.reviews-index__buy:hover {
+	:global(.reviews-index__buy:hover) {
 		transform: translateY(-1px);
 		background: var(--accent-hover);
 		color: #fff;
@@ -446,7 +446,7 @@ const extraGraph: Record<string, unknown>[] = [
 			flex-direction: column;
 		}
 
-		.reviews-index__buy,
+		:global(.reviews-index__buy),
 		.reviews-index__link-btn {
 			width: 100%;
 			min-height: var(--touch-min, 2.75rem);

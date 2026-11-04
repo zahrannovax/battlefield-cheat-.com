@@ -255,11 +255,11 @@ function isActive(href: string) {
 		flex-shrink: 0;
 	}
 
-	.site-tools > .site-cta-pill {
+	.site-tools > :global(.site-cta-pill) {
 		display: none;
 	}
 
-	.site-cta-pill {
+	:global(.site-cta-pill) {
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
@@ -282,20 +282,20 @@ function isActive(href: string) {
 		position: relative;
 	}
 
-	.site-cta-pill:hover {
+	:global(.site-cta-pill:hover) {
 		filter: brightness(1.06);
 		transform: translateY(-1px);
 		color: #fff;
 	}
 
-	.site-cta-pill--block {
+	:global(.site-cta-pill--block) {
 		width: 100%;
 		min-width: 0;
 		min-height: 2.85rem;
 		padding: 0 1.05rem;
 	}
 
-	.site-cta-pill--block span {
+	:global(.site-cta-pill--block) span {
 		position: static;
 		width: auto;
 		height: auto;
@@ -447,14 +447,14 @@ function isActive(href: string) {
 			display: none;
 		}
 
-		.site-tools > .site-cta-pill {
+		.site-tools > :global(.site-cta-pill) {
 			display: inline-flex;
 			width: auto;
 			min-width: 0;
 			padding: 0 1.05rem;
 		}
 
-		.site-cta-pill span {
+		:global(.site-cta-pill) span {
 			position: static;
 			width: auto;
 			height: auto;
@@ -490,13 +490,13 @@ function isActive(href: string) {
 			gap: 0.3rem;
 		}
 
-		.site-cta-pill--block {
+		:global(.site-cta-pill--block) {
 			width: 100%;
 			min-width: 0;
 			padding: 0 1.05rem;
 		}
 
-		.site-cta-pill--block span {
+		:global(.site-cta-pill--block) span {
 			position: static;
 			width: auto;
 			height: auto;
@@ -525,12 +525,12 @@ function isActive(href: string) {
 	@media (prefers-reduced-motion: reduce) {
 		.site-header__pill,
 		.site-nav a,
-		.site-cta-pill,
+		:global(.site-cta-pill),
 		.site-menu__bars span {
 			transition: none;
 		}
 
-		.site-cta-pill:hover {
+		:global(.site-cta-pill:hover) {
 			transform: none;
 		}
 	}

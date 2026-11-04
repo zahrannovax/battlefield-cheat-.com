@@ -228,7 +228,7 @@ const extraGraph: Record<string, unknown>[] = [
 		padding-top: 0.25rem;
 	}
 
-	.faq-detail__buy {
+	:global(.faq-detail__buy) {
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
@@ -244,7 +244,7 @@ const extraGraph: Record<string, unknown>[] = [
 			background 0.2s ease;
 	}
 
-	.faq-detail__buy:hover {
+	:global(.faq-detail__buy:hover) {
 		transform: translateY(-1px);
 		background: var(--accent-hover);
 		color: #fff;
@@ -350,7 +350,7 @@ const extraGraph: Record<string, unknown>[] = [
 			flex-direction: column;
 		}
 
-		.faq-detail__buy,
+		:global(.faq-detail__buy),
 		.faq-detail__link {
 			width: 100%;
 			min-height: 2.75rem;
