@@ -26,14 +26,14 @@ export const tarkovImages = {
 	battleRoyaleIsland: HERO,
 	raidMap: HERO,
 	product: [
-		{ src: HERO, alt: 'Battlefield 6 cheats ESP overlay' },
-		{ src: LOGO, alt: 'Battlefield 6 Cheats logo' },
-		{ src: HERO, alt: 'Battlefield 6 cheats on Windows PC' },
+		{ src: '/images/bf6-ingame-1.webp', alt: 'Battlefield 6 ESP boxes and player tags in a match', width: 2553, height: 1439 },
+		{ src: '/images/bf6-ingame-2.webp', alt: 'Battlefield 6 aim view with the scoreboard and minimap', width: 1920, height: 1080 },
+		{ src: '/images/bf6-ingame-3.webp', alt: 'Battlefield 6 wallhack boxes on players through a wall', width: 2557, height: 1432 },
 	],
 	gallery: [
-		{ src: HERO, alt: 'Battlefield 6 cheats ESP boxes', featured: true },
-		{ src: LOGO, alt: 'Battlefield 6 Cheats brand mark' },
-		{ src: HERO, alt: 'Battlefield 6 cheats in-match overlay' },
+		{ src: '/images/bf6-ingame-1.webp', alt: 'Battlefield 6 ESP boxes and player tags in a match', width: 2553, height: 1439, featured: true },
+		{ src: '/images/bf6-ingame-2.webp', alt: 'Battlefield 6 aim view with the scoreboard and minimap', width: 1920, height: 1080 },
+		{ src: '/images/bf6-ingame-3.webp', alt: 'Battlefield 6 wallhack boxes on players through a wall', width: 2557, height: 1432 },
 	],
 	/**
 	 * @deprecated Prefer brand.sitemap.images via brand-sitemap / page-sitemap.

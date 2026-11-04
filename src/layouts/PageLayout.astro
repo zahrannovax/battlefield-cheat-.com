@@ -18,7 +18,7 @@ import { defaultLocale } from '../data/i18n/locales';
 import { siteConfig } from '../data/site';
 import { getT } from '../i18n/server';
 
-type GalleryInput = string | { src: string; alt: string };
+type GalleryInput = string | { src: string; alt: string; width?: number; height?: number };
 
 interface Props {
 	title: string;
@@ -81,9 +81,9 @@ const normalizedGallery = gallery
 	.map((item) => {
 		if (typeof item !== 'string') {
 			const alt = item.alt?.trim() || resolvedHeroAlt;
-			return { src: item.src, alt };
+			return { src: item.src, alt, width: item.width ?? 800, height: item.height ?? 500 };
 		}
-		return { src: item, alt: resolvedHeroAlt };
+		return { src: item, alt: resolvedHeroAlt, width: 800, height: 500 };
 	})
 	.filter((item) => Boolean(item.src));
 
@@ -209,8 +209,8 @@ const useHomeHero =
 										srcset={contentSrcSet(image.src)}
 										sizes={galleryTileSizes}
 										alt={image.alt}
-										width="800"
-										height="500"
+										width={image.width}
+										height={image.height}
 										loading="lazy"
 										decoding="async"
 									/>

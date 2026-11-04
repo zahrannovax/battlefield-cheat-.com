@@ -1,4 +1,5 @@
 ---
+import { tarkovImages } from '../data/battlefield-6';
 import { defaultLocale, type LocaleCode } from '../data/i18n/locales';
 import { getLocalizedPath } from '../data/i18n/routing';
 import { getT } from '../i18n/server';
@@ -9,7 +10,7 @@ interface Props {
 
 const locale = Astro.props.locale ?? defaultLocale;
 const t = getT(locale);
-const previewSrc = '/images/hero-banner-new-2.png';
+const shots = tarkovImages.gallery;
 ---
 
 <section class="home-about" aria-labelledby="home-about-title">
@@ -22,16 +23,22 @@ const previewSrc = '/images/hero-banner-new-2.png';
 				<a href={getLocalizedPath('features', locale)}>{t('home.aboutPillar')}</a>{t('home.aboutP2Mid')}<a href={getLocalizedPath('bf6-esp', locale)}>{t('home.aboutEsp')}</a>{t('home.aboutP2Mid')}<a href={getLocalizedPath('bf6-aimbot', locale)}>{t('home.aboutAimbot')}</a>{t('home.aboutP2Or')}<a href={getLocalizedPath('setup', locale)}>{t('home.aboutUndetected')}</a>{t('home.aboutP2After')}
 			</p>
 		</div>
-		<figure class="home-about__media">
-			<img
-				src={previewSrc}
-				alt={t('home.aboutImageAlt')}
-				width="960"
-				height="540"
-				loading="lazy"
-				decoding="async"
-			/>
-		</figure>
+		<div class="home-about__media">
+			{
+				shots.map((shot, index) => (
+					<figure>
+						<img
+							src={shot.src}
+							alt={index === 0 ? t('home.aboutImageAlt') : shot.alt}
+							width={shot.width}
+							height={shot.height}
+							loading="lazy"
+							decoding="async"
+						/>
+					</figure>
+				))
+			}
+		</div>
 	</div>
 </section>
 
@@ -91,12 +98,25 @@ const previewSrc = '/images/hero-banner-new-2.png';
 	}
 
 	.home-about__media {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 0.55rem;
 		margin: 0;
 		min-width: 0;
-		border-radius: 1.15rem;
+	}
+
+	.home-about__media figure {
+		margin: 0;
 		overflow: hidden;
+		border-radius: 0.9rem;
 		background: #090909;
+		border: 1px solid rgba(255, 255, 255, 0.08);
 		aspect-ratio: 16 / 10;
+	}
+
+	.home-about__media figure:first-child {
+		grid-column: 1 / -1;
+		aspect-ratio: 16 / 9;
 	}
 
 	.home-about__media img {
@@ -125,9 +145,8 @@ const previewSrc = '/images/hero-banner-new-2.png';
 			font-size: clamp(1.7rem, 7.5vw, 2.35rem);
 		}
 
-		.home-about__media {
-			aspect-ratio: 16 / 11;
-			border-radius: 1rem;
+		.home-about__media figure:first-child {
+			aspect-ratio: 16 / 10;
 		}
 	}
 </style>
